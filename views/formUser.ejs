@@ -1,0 +1,25 @@
+<%- include('header')-%>
+
+<main>
+    <section>
+    <h2>Inscription</h2>
+    <form  method="post">
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="email" required>     
+        </p>
+        <p>
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" id="pseudo" value="pseudo" required>     
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="password" required>   
+        </p>
+        <p>
+            <button type="submit">Créer mon compte</button>
+        </p>
+    </form>
+    </section>
+</main>
+<%- include('footer') -%>

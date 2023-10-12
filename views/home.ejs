@@ -1,0 +1,39 @@
+<%- include('header') -%>
+    <main>
+        <section>
+            <div id="slider">
+                <a href="#" class="control_next"></a>
+                <a href="#" class="control_prev"></a>
+                <ul>
+                    <li><img src="../image/slider_1.jpeg" alt="photo d'une plage et de bateaux à Bali"></li>
+                    <li><img src="../image/slider_2.jpg" alt="photo d'un coucher de soleil sur une plage avec des montagnes"></li>
+                    <li><img src="../image/slider_3.jpg" alt="photo d'une piscine qui donne sur la jungle balinaise"></li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <% for(const itineraire of itineraires) { %>
+                <ul>
+                    <li>
+                       <p><a href="/itineraire/<%= itineraire.id %>"><%= itineraire.titre_1 %></p>
+                        <img src="/image/<%= itineraire.image_1 %>"/><p>Plus d'infos</p></a>
+                    </li>
+                </ul>
+            <% } %>
+
+        </section>
+
+        <div class="popup" id="popup">
+            <form action="" class="form-container">
+                <h2>Veux-tu t'inscrire à notre Newsletter ?</h2>
+                <p>Ne manque aucun changement des nos itinéraires </p>
+                <label for="email">
+      <strong>E-mail</strong>
+    </label>
+                <input type="email" placeholder="Ton Email" name="email" required />
+                <button type="submit" class="btn">Valider</button>
+                <button type="submit" class="btn cancel">Non merci</button>
+            </form>
+        </div>
+    </main>
+<%- include('footer') -%>

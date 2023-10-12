@@ -1,0 +1,34 @@
+<%- include('header') -%>
+<main>
+   <h2> <%= itineraire.titre_1%> </h2> 
+    <section>
+        <h3><%= itineraire.titre_2%></h3>
+        <p><%= itineraire.texte_1%></p>
+    </section>
+    <section>
+        <img src="/image/<%= itineraire.image_1 %>" alt="Photo de <%= itineraire.image_1 %>">
+    </section>
+    <section>
+        <h3><%= itineraire.titre_3%></h3>
+        <p><%= itineraire.texte_2 %></p>
+    </section>
+    <section>
+        <img src="/image/<%= itineraire.image_2 %>" alt="Photo de <%= itineraire.image_2 %>">
+    </section>
+    <section>
+        <h3><%= itineraire.titre_4%></h3>
+        <p><%= itineraire.texte_3 %></p>
+    </section>
+    <section>
+        <img src="/image/<%= itineraire.image_3 %>" alt="Photo de <%= itineraire.image_3 %>">
+    </section>
+    <section>
+        <h3><%= itineraire.titre_5%></h3>
+        <p><%= itineraire.texte_4 %></p>
+    </section>
+    <section>
+        <h3>ITINERAIRE SUR PLAN</h3>
+        <iframe src="<%= itineraire.plan %>"></iframe>
+    </section>
+</main>
+<%- include('footer') -%>

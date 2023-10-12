@@ -1,0 +1,50 @@
+<%- include('header') -%>
+<main>
+    <h2>Modification du formulaire d'itinéraire</h2>
+    <form method="post" enctype="multipart/form-data">
+        <p>
+             <label for="titre_1">Titre Principal</label>
+            <input type="text" name="titre_1" id="titre_1" value="<%= itineraire.titre_1 %>">     
+        </p>
+        <p>
+           <label for="titre_2">Titre texte 1</label>
+            <input type="text" name="titre_2" id="titre_2" value="<%= itineraire.titre_2 %>">     
+        </p>
+        <p>
+            <label for="texte_1">Texte 1</label>
+            <textarea type="text" name="texte_1" id="texte_1" value="<%= itineraire.texte_1 %>"/></textarea>
+        </p>
+        <p>
+            <label for="titre_3">Titre texte 2</label>
+            <input type="text" name="titre_3" id="titre_3" value="<%= itineraire.titre_3 %>">   
+        </p>
+        <p>
+            <label for="texte_2">Texte 2</label>
+            <textarea type="text" name="texte_2" id="texte_2" value="<%= itineraire.texte_2 %>"/></textarea> 
+        </p>
+        <p>
+            <label for="titre_4">Titre texte 3</label>
+            <input type="text" name="titre_4" id="titre_4" value="<%= itineraire.titre_4 %>">   
+        </p>
+        <p>
+        <label for="texte_3">Texte 3</label>
+        <textarea type="text" name="texte_3" id="texte_3" value="<%= itineraire.texte_3 %>"/></textarea>
+        </p>
+        <p>
+           <label for="titre_5">Titre texte 4</label>
+            <input type="text" name="titre_5" id="titre_5" value="<%= itineraire.titre_5 %>">     
+        </p>
+        <p>
+        <label for="texte_4">Texte 4</label>
+        <textarea type="text" name="texte_4" id="texte_4" value="<%= itineraire.texte_4 %>"/></textarea>
+        </p>
+        <p>
+           <label for="plan">Plan</label>
+            <input type="text" name="plan" id="plan" value="<%= itineraire.plan%>">     
+        </p>
+        <p>
+            <button type="submit">Enregistrer</button>
+        </p>
+    </form>
+</main>
+<%- include('footer') -%>

@@ -1,0 +1,21 @@
+<%- include ('header') -%>
+<main>
+        <section>
+    <h2>Formulaire d'authentification</h2>
+     <form method="post">
+        <p>
+        <label for="pseudo">Pseudo</label>
+        <input id="pseudo" type="text" name="pseudo"/>
+        </p>
+        
+        <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password"/>
+        </div>
+        
+        <button type="submit">Enregistrer</button>
+    </form>
+    </section>
+    <p><a href="/addUser"> Créer un compte</a></p>
+</main>
+<%-include ('footer') -%>

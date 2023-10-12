@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../image/logo_Bali.png" alt="logo du site représentant le temple Tanah Lot à Bali">
+            <h1>Titre</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="">Itinéraire</a>
+                        <% for(const itineraire of itineraires) { %>
+                        <ul>
+                            <li>
+                                <p>
+                                    <a href="/itineraire/<%= itineraire.id %>">
+                                        <%= itineraire.titre_1 %>
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                        <% } %>
+                    </li>
+                    <li><a href="/aPropos">A propos de Bali</a></li>
+                    <li><a href="/comment">Commentaires</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main>
