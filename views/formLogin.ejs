@@ -14,8 +14,11 @@
         </div>
         
         <button type="submit">Enregistrer</button>
+                <% if (message) { %>
+                <p><%= message %></p>
+            <% } %>
+        <p><a href="/addUser"> Créer un compte</a></p>
     </form>
     </section>
-    <p><a href="/addUser"> Créer un compte</a></p>
 </main>
 <%-include ('footer') -%>

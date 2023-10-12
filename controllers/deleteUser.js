@@ -2,12 +2,12 @@ import query from '../database.js';
 import fs from 'fs';
 
 
-/****SUPPRESSION D'UN ITINERAIRE */
+/****SUPPRESSION DE USER */
 export default (req, res) => {
     let id = req.params.id;
 
     query(
-        `DELETE FROM itineraire WHERE id =?`,
+        `DELETE FROM User WHERE id =?`,
         [id],
         (error, results) => {
             if (error) {
@@ -16,7 +16,7 @@ export default (req, res) => {
                 return;
             }
             
-            res.redirect(`/admin/itineraire`);
+            res.redirect(`/admin/user`);
         }
     )
 }

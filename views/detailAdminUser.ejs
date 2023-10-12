@@ -1,0 +1,13 @@
+<%- include('header') -%>
+<main>
+     <% for(const User of Users) { %>
+                <ul>
+                    <li>
+                       <p><a href="/user/<%= user.id %>"><%= user.pseudo %></p>
+                    </li>
+                </ul>
+
+    <a href="/user/<%= user.id %>/delete">Supprimer l'itinéraire</a>
+            <% } %>
+</main>
+<%- include('footer') -%>

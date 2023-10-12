@@ -2,6 +2,7 @@ import { v4 } from 'uuid';
 import query from '../database.js';
 import formidable from 'formidable';
 import fs from 'fs';
+import xss from'xss'
 
 // Export du contrôleur
 export function addItineraireSubmit (req, res) {
@@ -32,7 +33,7 @@ export function addItineraireSubmit (req, res) {
             // Chemin vers où sera stocké le fichier
             let newPath = 'public/image/' + image.originalFilename;
             // Récupération du nom du fichier pour le stocker en BDD
-            let imageName = image.originalFilename;
+            let imageName = xss(image.originalFilename);
 
             const promise = new Promise((resolve, rejected) => {
                 fs.copyFile(oldPath, newPath, (error) => {
@@ -51,14 +52,15 @@ export function addItineraireSubmit (req, res) {
         Promise.all(promises).then((imageNames) => {
             // Insertion du kitten dans la BDD
             query(
-                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,texte_4, titre_1,titre_2,titre_3,titre_4,titre_5) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)`, [v4(),imageNames[0], imageNames[1], imageNames[2],fields.plan, fields.texte_1, fields.texte_2, fields.texte_3, fields.texte_4, fields.titre_1,fields.titre_2,fields.titre_3,fields.titre_4,fields.titre_5],
+                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,texte_4, titre_1,titre_2,titre_3,titre_4,titre_5) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)`, [v4(),imageNames[0], imageNames[1], imageNames[2],xss(fields.plan), xss(fields.texte_1), xss(fields.texte_2), xss(fields.texte_3), xss(fields.texte_4), xss(fields.titre_1),xss(fields.titre_2),xss(fields.titre_3),xss(fields.titre_4),xss(fields
+                .titre_5)],
                 (error, results) => {
                     if (error) {
                         console.error(`Erreur lors de l'exécution de la requête ${error}`);
                         res.status(500).send('Erreur serveur');
                         return;
                     }
-                    res.send('itinéraire ajouté');
+                    res.redirect('/admin/itineraire');
                 }
             );
         }).catch((error) => {
@@ -70,5 +72,5 @@ export function addItineraireSubmit (req, res) {
 };
 
 export function addItineraire (req, res) {
-  res.render('addForm.ejs');
+  res.render('addForm');
 };

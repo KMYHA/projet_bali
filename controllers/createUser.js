@@ -6,22 +6,22 @@ export function addUserSubmit(req, res) {
     const email = req.body.email;
     const pseudo = req.body.pseudo;
     // Vérification de l'existence de l'email
-    query('SELECT * FROM User WHERE email = ?', [email], (error, result) => {
-        if (error) {
-            res.status(500).send("Erreur lors de la vérification de l'email");
-            return;
-        }
-        if (result.length === 0) {
-            // Aucun résultat similaire trouvé pour l'email
+    // query('SELECT * FROM User WHERE email = ?', [email], (error, result) => {
+    //     if (error) {
+    //         res.status(500).send("Erreur lors de la vérification de l'email");
+    //         return;
+    //     }
+    //     if (result.length === 0) {
+    //         // Aucun résultat similaire trouvé pour l'email
             
-        }
-        else {
-            res.status(400).send("Cet email est déjà utilisé.");
-            return;
-        }
+    //     }
+    //     else {
+    //         res.status(400).send("Cet email est déjà utilisé.");
+    //         return;
+    //     }
 
         // Vérification de l'existence du pseudo
-        query('SELECT * FROM User WHERE pseudo = ?', [pseudo], (error, result) => {
+        query('SELECT * FROM User WHERE pseudo = ? OR email = ?', [pseudo,email], (error, result) => {
             if (error) {
                 res.status(500).send("Erreur lors de la vérification du pseudo");
                 return;
@@ -49,12 +49,11 @@ export function addUserSubmit(req, res) {
                 });
             }
             else {
-                res.status(400).send("Ce pseudo est déjà utilisé.");
+                res.status(400).send("Ce pseudo ou cet email sont déjà utilisé.");
                 return;
-            }
-        });
+            };
     });
-}
+};
 
 export function addUser(req, res) {
     res.render(`formUser.ejs`)

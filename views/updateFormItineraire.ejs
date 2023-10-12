@@ -1,7 +1,7 @@
 <%- include('header') -%>
 <main>
     <h2>Modification du formulaire d'itinéraire</h2>
-    <form method="post" enctype="multipart/form-data">
+    <form method="POST" action="/itineraire/<%= itineraire.id %>/update">
         <p>
              <label for="titre_1">Titre Principal</label>
             <input type="text" name="titre_1" id="titre_1" value="<%= itineraire.titre_1 %>">     
@@ -12,7 +12,7 @@
         </p>
         <p>
             <label for="texte_1">Texte 1</label>
-            <textarea type="text" name="texte_1" id="texte_1" value="<%= itineraire.texte_1 %>"/></textarea>
+            <textarea type="text" name="texte_1" id="texte_1" value=""/><%= itineraire.texte_1 %></textarea>
         </p>
         <p>
             <label for="titre_3">Titre texte 2</label>
@@ -20,7 +20,7 @@
         </p>
         <p>
             <label for="texte_2">Texte 2</label>
-            <textarea type="text" name="texte_2" id="texte_2" value="<%= itineraire.texte_2 %>"/></textarea> 
+            <textarea type="text" name="texte_2" id="texte_2" value=""/><%= itineraire.texte_2 %></textarea> 
         </p>
         <p>
             <label for="titre_4">Titre texte 3</label>
@@ -28,7 +28,7 @@
         </p>
         <p>
         <label for="texte_3">Texte 3</label>
-        <textarea type="text" name="texte_3" id="texte_3" value="<%= itineraire.texte_3 %>"/></textarea>
+        <textarea type="text" name="texte_3" id="texte_3" value=""/><%= itineraire.texte_3 %></textarea>
         </p>
         <p>
            <label for="titre_5">Titre texte 4</label>
@@ -36,7 +36,7 @@
         </p>
         <p>
         <label for="texte_4">Texte 4</label>
-        <textarea type="text" name="texte_4" id="texte_4" value="<%= itineraire.texte_4 %>"/></textarea>
+        <textarea type="text" name="texte_4" id="texte_4" value=""/><%= itineraire.texte_4 %></textarea>
         </p>
         <p>
            <label for="plan">Plan</label>
