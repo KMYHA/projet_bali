@@ -15,11 +15,16 @@
             <% for(const itineraire of itineraires) { %>
                 <ul>
                     <li>
-                       <p><a href="/itineraire/<%= itineraire.id %>"><%= itineraire.titre_1 %></p>
-                        <img src="/image/<%= itineraire.image_1 %>"/><p>Plus d'infos</p></a>
+                        <p>
+                            <a href="/itineraire/<%= itineraire.id %>">
+                                <%= itineraire.titre_1 %>
+                        </p>
+                        <img src="/image/<%= itineraire.image_1 %>" />
+                        <p>Plus d'infos</p>
+                        </a>
                     </li>
                 </ul>
-            <% } %>
+                <% } %>
 
         </section>
 

@@ -2,10 +2,10 @@ import { v4 } from 'uuid';
 import query from '../database.js';
 import formidable from 'formidable';
 import fs from 'fs';
-import xss from'xss'
+import xss from 'xss'
 
 // Export du contrôleur
-export function addItineraireSubmit (req, res) {
+export function addItineraireSubmit(req, res) {
     const formData = formidable();
 
     // Récupération des champs et des fichiers
@@ -52,8 +52,8 @@ export function addItineraireSubmit (req, res) {
         Promise.all(promises).then((imageNames) => {
             // Insertion du kitten dans la BDD
             query(
-                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,texte_4, titre_1,titre_2,titre_3,titre_4,titre_5) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)`, [v4(),imageNames[0], imageNames[1], imageNames[2],xss(fields.plan), xss(fields.texte_1), xss(fields.texte_2), xss(fields.texte_3), xss(fields.texte_4), xss(fields.titre_1),xss(fields.titre_2),xss(fields.titre_3),xss(fields.titre_4),xss(fields
-                .titre_5)],
+                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,texte_4, titre_1,titre_2,titre_3,titre_4,titre_5) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)`, [v4(), imageNames[0], imageNames[1], imageNames[2], xss(fields.plan), xss(fields.texte_1), xss(fields.texte_2), xss(fields.texte_3), xss(fields.texte_4), xss(fields.titre_1), xss(fields.titre_2), xss(fields.titre_3), xss(fields.titre_4), xss(fields
+                    .titre_5)],
                 (error, results) => {
                     if (error) {
                         console.error(`Erreur lors de l'exécution de la requête ${error}`);
@@ -71,6 +71,6 @@ export function addItineraireSubmit (req, res) {
     });
 };
 
-export function addItineraire (req, res) {
-  res.render('addForm');
+export function addItineraire(req, res) {
+    res.render('addItineraire');
 };

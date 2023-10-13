@@ -1,0 +1,49 @@
+<%- include('header') -%>
+    <form method="post" enctype="multipart/form-data">
+        <p>
+            <label for="titre_1">Titre Principal</label>
+            <input id="titre_1" name="titre_1" type="text" />
+        </p>
+        <p>
+            <label for="images">Sélectionnez 3 images :</label>
+            <input type="file" name="images" id="images" accept=".jpg,.jpeg,.png" multiple>
+        </p>
+        <p>
+            <label for="titre_2">Titre texte 1</label>
+            <input id="titre_2" name="titre_2" type="text" />
+        </p>
+        <p>
+            <label for="texte_1">Texte 1</label>
+            <textarea id="texte_1" name="texte_1" /></textarea>
+        </p>
+        <p>
+            <label for="titre_3">Titre texte 2</label>
+            <input id="titre_3" name="titre_3" type="text" />
+        </p>
+        <p>
+            <label for="texte_2">Texte 2</label>
+            <textarea id="texte_2" name="texte_2" /></textarea>
+        </p>
+        <p>
+            <label for="titre_4">Titre texte 3</label>
+            <input id="titre_4" name="titre_4" type="text" />
+        </p>
+        <p>
+            <label for="texte_3">Texte 3</label>
+            <textarea id="texte_3" name="texte_3" /></textarea>
+        </p>
+        <p>
+            <label for="titre_5">Titre texte 4</label>
+            <input id="titre_5" name="titre_5" type="text" />
+        </p>
+        <p>
+            <label for="texte_4">Texte 4</label>
+            <textarea id="texte_4" name="texte_4" /></textarea>
+        </p>
+        <p>
+            <label for="plan">URL Google My Maps :</label>
+            <input type="text" id="plan" name="plan">
+        </p>
+        <button type="submit">Envoyer</button>
+    </form>
+<%- include('footer') -%>

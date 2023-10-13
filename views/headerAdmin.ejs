@@ -19,21 +19,11 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="">Itinéraire</a>
-                        <% for(const itineraire of itineraires) { %>
-                            <ul>
-                                <li>
-                                    <p>
-                                        <a href="/itineraire/<%= itineraire.id %>">
-                                            <%= itineraire.titre_1 %>
-                                        </a>
-                                    </p>
-                                </li>
-                            </ul>
-                            <% } %>
+                    <li>
+                        <a href="/admin/itineraire">Itinéraire</a>
                     </li>
-                    <li><a href="/aPropos">A propos de Bali</a></li>
+                    <li><a href="/admin/user"> User</a>
+                    </li>
                     <li><a href="/comment">Commentaires</a></li>
                 </ul>
             </nav>

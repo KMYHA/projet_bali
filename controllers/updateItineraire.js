@@ -57,7 +57,7 @@ export function updateItineraireSubmit(req, res) {
             req.body.titre_4,
             req.body.titre_5,
             id
-            
+
         ],
         (error, result) => {
             if (error) {

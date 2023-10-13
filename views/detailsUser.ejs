@@ -1,0 +1,20 @@
+<%- include('headerAdmin') -%>
+    <main>
+        <section>
+            <a href="/admin/user">Revenir à la liste des utilisateurs</a>
+            <ul>
+                <li>
+                    <p>
+                        <%= User.pseudo %>
+                    </p>
+                    <p>
+                        <%= User.email%>
+                    </p>
+                    <p>
+                        <%= User.role%>
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </main>
+<%- include('footer') -%>

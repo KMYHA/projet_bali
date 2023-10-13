@@ -1,11 +1,11 @@
 import query from '../database.js';
 
-/****DETAIL DE L'ITINERAIRE */
+/****DETAIL DU USER */
 export default (req, res) => {
     const id = req.params.id;
 
     query(
-        `SELECT * FROM itineraire WHERE id= ?`, [id],
+        `SELECT * FROM User WHERE id= ?`, [id],
         (error, result) => {
             if (error) {
                 console.error(`Erreur lors de l'exécution de la requête ${error}`);
@@ -13,16 +13,16 @@ export default (req, res) => {
                 return;
             }
             if (result.length === 0) {
-                res.status(404).send(`The itinerary with id ${id} is not found`);
+                res.status(404).send(`The user with id ${id} is not found`);
                 return;
             }
-            const itineraire = result[0];
+            const User = result[0];
 
-            if (!itineraire) {
-                return res.status(404).send(`Itinerary with id ${id} not found`);
+            if (!User) {
+                return res.status(404).send(`User with id ${id} not found`);
             }
 
-            res.render('itineraires.ejs', { itineraire });
+            res.render('detailsUser', { User });
         }
     )
 }

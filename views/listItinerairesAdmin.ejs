@@ -1,0 +1,20 @@
+<%- include('headerAdmin') -%>
+    <main>
+        <a href="/itineraire/add">Ajouter un itinéraire</a>
+        <% for(const itineraire of itineraires) { %>
+            <ul>
+                <li>
+                    <p>
+                        <a href="/itineraire/<%= itineraire.id %>">
+                            <%= itineraire.titre_1 %>
+                    </p>
+                    <img src="/image/<%= itineraire.image_1 %>" /></a>
+                </li>
+            </ul>
+            <a href="/itineraire/<%= itineraire.id %>/update">Modifier l'itinéraire</a>
+            <a href="/itineraire/<%= itineraire.id %>/delete">Supprimer l'itinéraire</a>
+            <% } %>
+
+
+    </main>
+<%- include('footer') -%>

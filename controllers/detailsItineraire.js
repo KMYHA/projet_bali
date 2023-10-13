@@ -1,12 +1,11 @@
 import query from '../database.js';
 
-/****DETAIL DU CONTACT */
+/****DETAIL DE L'ITINERAIRE */
 export default (req, res) => {
     const id = req.params.id;
 
     query(
-        `SELECT * FROM itineraire WHERE id= ?`, 
-        [id],
+        `SELECT * FROM itineraire WHERE id= ?`, [id],
         (error, result) => {
             if (error) {
                 console.error(`Erreur lors de l'exécution de la requête ${error}`);
@@ -23,7 +22,7 @@ export default (req, res) => {
                 return res.status(404).send(`Itinerary with id ${id} not found`);
             }
 
-            res.render('Itineraire', { itineraire });
+            res.render('detailsItineraire', { itineraire });
         }
     )
 }
