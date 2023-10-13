@@ -1,0 +1,241 @@
+/******** GENERAL ********/
+
+html {
+    font-size: 62.5%;
+    font-family: "Lato";
+}
+
+body {
+    /*box-sizing: border-box;*/
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    color: #473c38;
+    background-color: #f6f4f3;
+}
+
+img {
+    max-width: 60%;
+    width: auto;
+    height: auto;
+}
+
+
+header img,
+headerAdmin img {
+    max-width: 50%;
+    width: auto;
+    height: auto;
+}
+li{
+    list-style:none;
+}
+
+footer {
+    background-color: #cbbfb4;
+}
+
+/******** NAVBAR ********/
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+}
+
+.header_logo h1 {
+    margin-left: 20px;
+    text-align: left;
+}
+
+nav {
+    background-color: #cbbfb4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    /* permet de rendre la police responsive: elle ne fera jamais moins de 0.5 et jamais plus que 1.5*/
+    /*font-size:calc(0.5rem +1.5rem);*/
+}
+
+/******** MENU BURGER ********/
+
+#navbar {
+    width: 100%;
+}
+
+#ul_nav {
+    display: block;
+    justify-content: space-between;
+}
+
+/*pour le format desktop*/
+
+/*#ul_nav a{*/
+
+/*    padding:10px;*/
+
+/*}*/
+
+#ul_nav li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+#ul_list_nav {
+    display: none;
+    position: absolute;
+}
+
+#ul_nav li:hover #ul_list_nav {
+    display: block;
+    width: max-content;
+}
+
+#ul_list_nav li {
+    display: block;
+    margin-right: 0;
+}
+
+#ul_list_nav a {
+    padding: 10px;
+}
+
+#icons {
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:650px) {
+    #icons {
+        display: block;
+    }
+    #icons:before {
+        content: "\2630";
+    }
+    .active #icons:before {
+        content: "\2715";
+    }
+    ul_nav {
+        position: fixed;
+        left: -100%;
+        top: 5%;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.25s;
+    }
+    #ul_nav li {
+        padding: 3px 0;
+    }
+    #ul_nav li:hover {
+        background-color: #e8e3de;
+    }
+    nav.active ul {
+        left: 0;
+    }
+}
+
+
+/******** ITINERAIRES ********/
+
+.itinerary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*text-decoration:none;*/
+}
+
+.itinerary_section {
+    margin-top: 40px;
+}
+
+.itinerary_section h2,
+.itinerary_section a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #473c38;
+    text-decoration: none;
+    margin:10px;
+}
+
+.itinerary_section h2 a:hover {
+    color: #86654b;
+}
+
+
+.list_itinerary ul {
+    padding: 0;
+}
+
+.itinerary_info,
+.itinerary_info a {
+    font-size: 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.itinerary_info {
+    margin-top: 20px;
+}
+
+.itinerary_info a {
+    background-color: #473c38;
+    padding: 7px;
+    color: #f6f4f3;
+    border-radius: 5%;
+}
+
+.itinerary_info a:hover {
+    background-color: #86654b;
+}
+
+
+
+/******** FOOTER ********/
+.footer a{
+  text-decoration:none;  
+  color:#473c38;
+}
+.footer_contact, .social_network {
+    padding:10px;
+}
+
+.footer_contact, .social_network h4{
+    text-align:center;
+    font-size:16px;
+}
+.social_network{
+    text-align: center; 
+}
+
+.social_network i{
+    font-size:40px;
+    text-align: center; 
+    padding:15px;
+}
+
+.footer_final{
+    font-size:14px;
+    text-align:center;
+    font-style:italic;
+    font-weight:bold;
+    padding:10px;
+}
+

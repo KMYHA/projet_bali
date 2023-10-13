@@ -11,17 +11,21 @@
                 </ul>
             </div>
         </section>
-        <section>
+        <section class="list_itinerary">
             <% for(const itineraire of itineraires) { %>
                 <ul>
                     <li>
-                        <p>
-                            <a href="/itineraire/<%= itineraire.id %>">
+                        <section class="itinerary_section">
+                        <h2>
+                            <a class="itinerary" href="/itineraire/<%= itineraire.id %>">
                                 <%= itineraire.titre_1 %>
-                        </p>
+                        </h2>
                         <img src="/image/<%= itineraire.image_1 %>" />
-                        <p>Plus d'infos</p>
                         </a>
+                        <div class="itinerary_info">
+                            <a href="/itineraire/<%= itineraire.id %>">Itinéraire complet</a>
+                        </div>
+                        </section>
                     </li>
                 </ul>
                 <% } %>
