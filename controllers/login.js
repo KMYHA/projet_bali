@@ -33,16 +33,18 @@ export function login(req, res) {
                     );
                     return;
                 }
+                req.session.isLogged = true; 
+                //stockage de l'id User
+                req.session.idUser = user[0].id;
+                
                 if (user[0].role === 'admin') {
                     // Utilisateur est un administrateur
-                    req.session.isLogged = true;
-                    req.session.isAdmin = true; // Stockez l'information d'administrateur dans la session
+                    req.session.isAdmin = true; // Stockage de l'administrateur dans la session
                     res.redirect('/admin/itineraire'); //
                 }
-                else {
-
-                    req.session.isLogged = true;
-                    res.redirect('/');
+                else if (user[0].role === 'User'){
+                    req.session.isUser = true;
+                    res.redirect('/comment');
                 }
             });
         }

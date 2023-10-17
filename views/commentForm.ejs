@@ -16,26 +16,31 @@
                     <input type="text" name="pseudo" id="pseudo" value="pseudo" placeholder="Ton Pseudo" required="required">
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="email" placeholder="Ton Email" required="required">
-                </div>
-                <div>
-                    <label for="itineraire">Itinéraire concerné (facultatif)</label>
-                    <select name="itineraire" id="itineraire">
-                   <option value="">--Choisis une option--</option>
-  <option value="1">Itinéraire 10 Jours</option>
-  <option value="2">Itinéraire 2 Semaines</option>
-  <option value="3">Itinéraire 2 Semaines</option>
-  </select>
-                </div>
-                <div>
-                    <label for="com">Ton commentaire</label>
-                    <textarea id="com" name="com" rows="5" cols="33" minlength="10" placeholder="Ecris ici ton commentaire" required="required"></textarea>
+                    <label for="message">Ton commentaire</label>
+                    <textarea id="message" name="message" rows="5" cols="33" minlength="10" placeholder="Ecris ici ton commentaire" required="required"></textarea>
                 </div>
                 <div>
                     <button type="submit">Envoyer</button>
                 </div>
             </form>
         </section>
+        <section>
+           <a href="/login">Tu dois te connecter pour pouvoir ajouter un commentaire</a>
+         <% for (commentaire of commentaires) { %>
+      <ul>
+        <li>
+            <p>
+            <%= commentaire.pseudo %> : 
+            </p>
+          <p>
+            <%= commentaire.dateFormatee %>
+            </p>
+            <p>
+            <%= commentaire.message %>
+            </p>
+        </li>
+      </ul>
+    <% } %>
+        </section> 
     </main>
 <%- include('footer') -%>

@@ -1,0 +1,18 @@
+<%- include('headerAdmin') -%>
+    <main>
+        <% for(const Commentaire of Commentaires) { %>
+            <ul>
+                <li>
+                    <p>
+                        <%= Commentaire.pseudo %>
+                    </p>
+                      <p>
+                        <%= Commentaire.message %>
+                    </p>
+                </li>
+            </ul>
+            <a href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
+            <% } %>
+
+    </main>
+<%- include('footer') -%>

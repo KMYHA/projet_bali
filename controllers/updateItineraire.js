@@ -39,23 +39,21 @@ export function updateItineraireSubmit(req, res) {
             texte_1 = ?,
             texte_2 = ?,
             texte_3 = ?,
-            texte_4 = ?,
             titre_1 = ?,
             titre_2 = ?,
             titre_3 = ?,
-            titre_4 = ?,
-            titre_5 = ?
+            titre_4 = ?
+        
+            
         WHERE id = ?`, [
             req.body.plan,
             req.body.texte_1,
             req.body.texte_2,
             req.body.texte_3,
-            req.body.texte_4,
             req.body.titre_1,
             req.body.titre_2,
             req.body.titre_3,
             req.body.titre_4,
-            req.body.titre_5,
             id
 
         ],

@@ -33,12 +33,6 @@ app.set('views', './views');
 // indique à Express.js d'utiliser.ejs pour afficher des vues dynamiques 
 app.set('view engine', 'ejs'); 
 
-//A SUPPRIMER
-/*
-app.get('/', (req, res) => {
-    res.status(200).render('home.ejs')
-})
-*/
 //importation des routes
 app.use('/', router);
 

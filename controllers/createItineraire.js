@@ -26,6 +26,7 @@ export function addItineraireSubmit(req, res) {
         }
 
         for (let i = 0; i <= 2; i++) {
+            
             const image = files.images[i];
 
             // Récupération du chemin temporaire du fichier
@@ -50,12 +51,12 @@ export function addItineraireSubmit(req, res) {
         }
         // Copie le fichier depuis le dossier temporaire vers le dossier de destination
         Promise.all(promises).then((imageNames) => {
-            // Insertion du kitten dans la BDD
+        
             query(
-                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,texte_4, titre_1,titre_2,titre_3,titre_4,titre_5) VALUES (?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)`, [v4(), imageNames[0], imageNames[1], imageNames[2], xss(fields.plan), xss(fields.texte_1), xss(fields.texte_2), xss(fields.texte_3), xss(fields.texte_4), xss(fields.titre_1), xss(fields.titre_2), xss(fields.titre_3), xss(fields.titre_4), xss(fields
-                    .titre_5)],
+                `INSERT INTO itineraire(id,image_1, image_2, image_3,plan,texte_1,texte_2,texte_3,titre_1,titre_2,titre_3,titre_4,id_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [v4(), imageNames[0], imageNames[1], imageNames[2], xss(fields.plan), xss(fields.texte_1), xss(fields.texte_2), xss(fields.texte_3), xss(fields.titre_1), xss(fields.titre_2), xss(fields.titre_3), xss(fields.titre_4),req.session.idUser],
                 (error, results) => {
                     if (error) {
+        
                         console.error(`Erreur lors de l'exécution de la requête ${error}`);
                         res.status(500).send('Erreur serveur');
                         return;

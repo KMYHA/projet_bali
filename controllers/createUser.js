@@ -1,6 +1,7 @@
 import { v4 } from 'uuid';
 import query from '../database.js';
 import bcrypt from 'bcrypt';
+import xss from 'xss'
 
 export function addUserSubmit(req, res) {
     const email = req.body.email;
@@ -23,7 +24,7 @@ export function addUserSubmit(req, res) {
                 }
 
                 query(
-                    `INSERT INTO User (id, email, pseudo, password, role) VALUES (?, ?, ?, ?, ?)`, [v4(), email, pseudo, hash, 'User'],
+                    `INSERT INTO User (id, email, pseudo, password, role) VALUES (?, ?, ?, ?, ?)`, [v4(), xss(email), xss(pseudo), hash, 'User'],
                     (error, result) => {
                         if (error) {
                             res.status(500).send("Erreur lors de l'ajout du nouvel utilisateur");

@@ -52,8 +52,9 @@ nav a:hover {
 .header_logo {
     display: flex;
     align-items: center;
-    margin: 0;
+    margin:0;
     cursor: pointer;
+    
 }
 
 .header_logo h1 {
@@ -67,6 +68,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin-bottom:15px;
 
     /* permet de rendre la police responsive: elle ne fera jamais moins de 0.5 et jamais plus que 1.5*/
     /*font-size:calc(0.5rem +1.5rem);*/
@@ -215,6 +217,7 @@ nav {
 }
 .footer_contact, .social_network {
     padding:10px;
+    margin-top:15px;
 }
 
 .footer_contact, .social_network h4{
@@ -239,3 +242,50 @@ nav {
     padding:10px;
 }
 
+
+/******** DETAILS ITINERAIRES ********/
+
+.redirection_link{
+    color: #473c38;
+    padding-left:10px;
+}
+
+.redirection_link:hover {
+    color: #86654b;
+}
+
+.itinerary_title_1{
+    text-align:center;
+}
+
+itinerary_title_1{
+    text-align:center;
+}
+
+.details_part_1{
+    display:flex;
+    
+}
+
+.details_part_2{
+    display:flex;
+    flex-direction:row-reverse;
+    
+}
+
+.details_part_3{
+    display:flex;
+    
+}
+
+figure h3{
+    padding-left:15px;
+}
+
+.details_txt{
+    font-size:10px;
+}
+
+.details_img{
+    margin:auto;
+}

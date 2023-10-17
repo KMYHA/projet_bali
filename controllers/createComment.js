@@ -1,28 +1,37 @@
 import { v4 } from 'uuid';
 import query from '../database.js';
-import bcrypt from 'bcrypt';
+import xss from 'xss'
 
-export function addCommentSubmit(req, res) {
+export function addCommentSubmit (req, res) {
 
-                    query(
-                        `INSERT INTO Commentaire (id, pseudo, email, message, date de creation) VALUES (?, ?, ?, ?, ?)`, [v4(), email],
-                        (error, result) => {
-                            if (error) {
-                                res.status(500).send("Erreur lors de l'ajout du nouvel utilisateur");
-                                return;
-                            }
-                            res.redirect(`/`);
-                        }
-                    );
-                });
-            }
-            else {
-                res.status(400).send("Ce pseudo ou cet email sont déjà utilisé.");
-                return;
-            };
-    });
-};
+  const pseudo=req.body.pseudo;
+  const message=req.body.message;
+
+
+  query(
+    `INSERT INTO Commentaire (id, pseudo, message, id_user) VALUES (?, ?, ?, ?)`,
+    [v4(), xss(pseudo), xss(message),req.session.idUser],
+    (error, result) => {
+      if (error) {
+        res.status(500).send("Erreur lors de l'ajout du nouveau commentaire");
+        return;
+      } 
+        res.redirect('/comment');
+    }
+  );
+}
 
 export function addComment(req, res) {
-    res.render(`commentForm`)
-};
+  query(
+    'SELECT *, DATE_FORMAT(date_de_creation, "%Y-%m-%d %H:%i:%s") AS dateFormatee FROM Commentaire',
+    [],
+    (error, result) => {
+      if (error) {
+        res.status(500).send("Erreur lors de la récupération des commentaires");
+        return;
+      } 
+        const commentaires = result;
+        res.render('commentForm', { commentaires });
+    }
+  );
+}

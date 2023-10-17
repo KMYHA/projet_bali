@@ -1,11 +1,11 @@
 import query from '../database.js';
 
-/****DETAIL DE L'ITINERAIRE */
+/****DETAIL DES COMMENTAIRES */
 export default (req, res) => {
     const id = req.params.id;
 
     query(
-        `SELECT * FROM itineraire WHERE id= ?`, [id],
+        `SELECT * FROM Commentaire WHERE id= ?`, [id],
         (error, result) => {
             if (error) {
                 console.error(`Erreur lors de l'exécution de la requête ${error}`);
@@ -13,12 +13,16 @@ export default (req, res) => {
                 return;
             }
             if (result.length === 0) {
-                res.status(404).send(`The itinerary with id ${id} is not found`);
+                res.status(404).send(`The comment with id ${id} is not found`);
                 return;
             }
-            const itineraire = result[0];
+            const Commentaires = result[0];
 
-            res.render('detailsItineraire', {itineraire} );
+            if (!Commentaires) {
+                return res.status(404).send(`Comment with id ${id} not found`);
+            }
+
+            res.render('commentForm', { Commentaires });
         }
     )
 }

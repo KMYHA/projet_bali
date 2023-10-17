@@ -11,11 +11,14 @@ import { updateItineraire, updateItineraireSubmit } from "./controllers/updateIt
 import deleteItineraire from './controllers/deleteItineraire.js';
 import adminItineraire from './controllers/adminItineraire.js';
 import aPropos from './controllers/aPropos.js';
-// import comment from './controllers/comment.js';
+import {addComment,addCommentSubmit} from './controllers/createComment.js';
 import { addUser, addUserSubmit } from './controllers/createUser.js';
+import adminComment from './controllers/adminComment.js';
+import deleteComment from './controllers/deleteComment.js'
 import deleteUser from './controllers/deleteUser.js';
 import adminUser from './controllers/adminUser.js';
 import detailsUser from './controllers/detailsUser.js';
+import {addNewsletter,addNewsletterSubmit} from './controllers/createNewsletter.js'
 
 
 const checkAuthentification = (req, res, next) => {
@@ -25,6 +28,15 @@ const checkAuthentification = (req, res, next) => {
     }
     next();
 }
+
+const checkAuthentificationUser = (req, res, next) => {
+    if (!req.session.isUser) { 
+        res.redirect('/login'); 
+        return;
+    }
+    next();
+};
+
 
 router.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
@@ -49,18 +61,24 @@ router.get('/', listItineraire);
 router.get('/itineraire/add', checkAuthentification, addItineraire);
 router.post('/itineraire/add', checkAuthentification, addItineraireSubmit);
 router.get('/itineraire/:id', detailsItineraire);
+router.get('/itineraire/:id/newsletter', addNewsletter);
+router.post('/itineraire/:id/newsletter', addNewsletterSubmit);
 router.get('/itineraire/:id/update', checkAuthentification, updateItineraire)
 router.post('/itineraire/:id/update', checkAuthentification, updateItineraireSubmit);
 router.get('/itineraire/:id/delete', checkAuthentification, deleteItineraire);
-router.get('/aPropos', aPropos)
-// router.get('/comment', comment)
-router.get('/admin/itineraire', checkAuthentification, adminItineraire)
-router.get('/admin/user', checkAuthentification, adminUser)
-router.get('/addUser', addUser)
+router.get('/aPropos', aPropos);
+router.get('/comment',addComment);
+router.post('/comment',checkAuthentificationUser, addCommentSubmit);
+router.get('/admin/comment', checkAuthentification, adminComment);
+router.get('/comment/:id/delete', checkAuthentification, deleteComment);
+router.get('/admin/itineraire', checkAuthentification, adminItineraire);
+router.get('/admin/user', checkAuthentification, adminUser);
+router.get('/addUser', addUser);
 router.post('/addUser', addUserSubmit);
 router.get('/login', loginForm);
 router.post('/login', login);
 router.get('/user/:id', detailsUser);
 router.get('/user/:id/delete', checkAuthentification, deleteUser);
+
 
 export default router;
