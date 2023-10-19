@@ -24,32 +24,22 @@
 <body>
     <header>
         <section>
-            <nav class="active">
-                <div  class="header_logo">
-            <a href="/"><img src="../image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali"></a>
+            <nav id="nav" class="active">
+            <a href="/"><img src="/image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali"></a>
+            
             <h1><a href="/">Bali Travelers</a></h1>
-        </div>
-        <div id="navbar">
-                <ul id="ul_nav">
+                <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="">Itinéraire</a>
-                        <% for(const itineraire of itineraires) { %>
-                            <ul id="ul_list_nav">
-                                <li>
-                                    <p>
-                                        <a href="/itineraire/<%= itineraire.id %>">
-                                            <%= itineraire.titre_1 %>
-                                        </a>
-                                    </p>
-                                </li>
-                            </ul>
-                            <% } %>
-                    </li>
+                    <li><a href="/itineraires">Itinéraire</a>
                     <li><a href="/aPropos">A propos de Bali</a></li>
                     <li><a href="/comment">Commentaires</a></li>
+                     <% if (locals.isLogged) { %>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                <% } %>
                 </ul>
                 <div id='icons'></div>
-                </div>
             </nav>
         </section>
     </header>

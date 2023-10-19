@@ -12,21 +12,23 @@ body {
     padding: 0;
     color: #473c38;
     background-color: #f6f4f3;
+    width:100%;
 }
 
 img {
-    max-width: 60%;
-    width: auto;
+    /*max-width: 60%;*/
+    width: 80%;
     height: auto;
 }
 
 
 header img,
 headerAdmin img {
-    max-width: 50%;
-    width: auto;
+    /*max-width: 50%;*/
+    width: 50%;
     height: auto;
 }
+
 li{
     list-style:none;
 }
@@ -50,109 +52,75 @@ nav a:hover {
 }
 
 .header_logo {
-    display: flex;
-    align-items: center;
-    margin:0;
     cursor: pointer;
-    
 }
 
-.header_logo h1 {
-    margin-left: 20px;
-    text-align: left;
-}
-
-nav {
-    background-color: #cbbfb4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom:15px;
-
-    /* permet de rendre la police responsive: elle ne fera jamais moins de 0.5 et jamais plus que 1.5*/
-    /*font-size:calc(0.5rem +1.5rem);*/
-}
 
 /******** MENU BURGER ********/
 
-#navbar {
-    width: 100%;
+h1{
+    font-size:1rem;
 }
 
-#ul_nav {
-    display: block;
-    justify-content: space-between;
+nav{
+    background-color: #cbbfb4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    
 }
 
-/*pour le format desktop*/
-
-/*#ul_nav a{*/
-
-/*    padding:10px;*/
-
-/*}*/
-
-#ul_nav li {
-    display: inline;
-    margin-right: 10px;
-    font-size: 12px;
+nav ul{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    font-size:0.5rem;
 }
 
-#ul_list_nav {
-    display: none;
-    position: absolute;
+nav li {
+    color:#473c38;
 }
 
-#ul_nav li:hover #ul_list_nav {
-    display: block;
-    width: max-content;
+#icons{
+    cursor:pointer;
+    display:none;
+    display:block;
+    font-size:14px;
 }
 
-#ul_list_nav li {
-    display: block;
-    margin-right: 0;
-}
-
-#ul_list_nav a {
-    padding: 10px;
-}
-
-#icons {
-    cursor: pointer;
-    display: none;
-}
-
-@media (max-width:650px) {
-    #icons {
-        display: block;
+    #icons:before{
+        content:"\2630"
     }
-    #icons:before {
-        content: "\2630";
-    }
-    .active #icons:before {
-        content: "\2715";
-    }
-    ul_nav {
-        position: fixed;
-        left: -100%;
-        top: 5%;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        transition: 0.25s;
-    }
-    #ul_nav li {
-        padding: 3px 0;
-    }
-    #ul_nav li:hover {
-        background-color: #e8e3de;
-    }
-    nav.active ul {
-        left: 0;
-    }
+
+.active #icons:before{
+    content:"\2715";
 }
 
+nav ul{
+    position:absolute;
+    left:-100%;
+    top:13%;
+    flex-direction:column;
+    background-color:#d1c8c1;
+    width:100%;
+    text-align:center;
+    transition:0.25s;
+    padding:0;
+    
+}
+
+nav li{
+    padding:3px 0;
+}
+
+nav li:hover{
+    background-color:#cbbfb4;
+}
+
+.active ul{
+    left:0;
+}
 
 /******** ITINERAIRES ********/
 
@@ -258,34 +226,21 @@ nav {
     text-align:center;
 }
 
-itinerary_title_1{
-    text-align:center;
-}
 
 .details_part_1{
     display:flex;
-    
+    flex-direction:column;
+    margin:7px;
+    width:100%;
 }
 
-.details_part_2{
+.details_img_1{
+    width:100%;
+    height:auto;
     display:flex;
-    flex-direction:row-reverse;
-    
+    justify-content:center;
 }
 
-.details_part_3{
-    display:flex;
-    
-}
 
-figure h3{
-    padding-left:15px;
-}
 
-.details_txt{
-    font-size:10px;
-}
 
-.details_img{
-    margin:auto;
-}

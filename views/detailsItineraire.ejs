@@ -1,11 +1,14 @@
 <%- include('header') -%>
     <main>
-        <section class="itinerary_details">
+        <div>
         <h2  class="itinerary_title_1">
             <%= itineraire.titre_1 %>
         </h2>
-        <figure class="details_part_1">
-        <section class="details_txt">
+        </div>
+        <section class="details_img_1">
+            <img src="/image/<%= itineraire.image_1 %>" alt="Photo de <%= itineraire.image_1 %>">
+        </section>
+        <section class="details_part_1">
             <h3>
                 <%= itineraire.titre_2%>
             </h3>
@@ -13,12 +16,11 @@
                 <%= itineraire.texte_1%>
             </p>
             </section>
-            <section class="details_img">
-            <img src="/image/<%= itineraire.image_1 %>" alt="Photo de <%= itineraire.image_1 %>">
-        </section>
-        </figure>
-        <figure class="details_part_2">
-        <section>
+            
+        <section class="details_img_2">
+            <img src="/image/<%= itineraire.image_2 %>" alt="Photo de <%= itineraire.image_2 %>">
+        </section>    
+        <section "details_part_2">
             <h3>
                 <%= itineraire.titre_3%>
             </h3>
@@ -26,12 +28,11 @@
                 <%= itineraire.texte_2 %>
             </p>
             </section>
-            <section>
-            <img src="/image/<%= itineraire.image_2 %>" alt="Photo de <%= itineraire.image_2 %>">
+      
+        <section class="details_img_3">
+            <img src="/image/<%= itineraire.image_3 %>" alt="Photo de <%= itineraire.image_3 %>">
         </section>
-        </figure>
-        <figure  class="details_part_3">
-        <section>
+        <section class="details_part_3">
             <h3>
                 <%= itineraire.titre_4%>
             </h3>
@@ -39,10 +40,6 @@
                 <%= itineraire.texte_3 %>
             </p>
             </section>
-            <section>
-            <img src="/image/<%= itineraire.image_3 %>" alt="Photo de <%= itineraire.image_3 %>">
-        </section>
-        </figure>
         <section class="details_plan">
             <h3>ITINERAIRE SUR PLAN</h3>
             <iframe src="<%= itineraire.plan %>"></iframe>

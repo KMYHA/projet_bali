@@ -1,0 +1,13 @@
+<%- include('header') -%>
+<section>
+    <% for(const itineraire of itineraires) { %>
+        <div class="itinerary">
+            <h2><%= itineraire.titre_1 %></h2>
+            <img src="/image/<%= itineraire.image_1 %>" />
+            <div class="itinerary_info">
+                <a href="/itineraire/<%= itineraire.id %>">Itinéraire complet</a>
+            </div>
+        </div>
+    <% } %>
+</section>
+<%- include('footer') -%>

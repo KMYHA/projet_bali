@@ -23,7 +23,7 @@
 <body>
     <header>
         <div>
-            <img src="../image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali">
+            <a href="/"><img src="/image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali"></a>
             <h1><a href="/">Bali Travelers</a></h1>
         </div>
         <div>
@@ -35,6 +35,11 @@
                     <li><a href="/admin/user"> User</a>
                     </li>
                     <li><a href="/admin/comment">Commentaires</a></li>
+                    <% if (locals.isLogged) { %>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/login">Login</a></li>
+                <% } %>
                 </ul>
             </nav>
         </div>

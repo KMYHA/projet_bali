@@ -23,7 +23,7 @@ export default (req, res) => {
             // Supprimez les fichiers d'image du système de fichiers
             const imagesToDelete = [results[0].image_1, results[0].image_2, results[0].image_3];
             imagesToDelete.forEach((imageName) => {
-                const filePath = 'public/image/' + imageName;
+                const filePath = '/image/' + imageName;
                 fs.unlink(filePath, (err) => {
                     if (err) {
                         console.error(`Erreur lors de la suppression du fichier ${imageName}: ${err}`);
@@ -33,6 +33,16 @@ export default (req, res) => {
 
             // Supprimez l'itinéraire de la base de données
             query(
+                'DELETE FROM Newsletter WHERE id_itineraire = ?',
+                [id],
+                (error) => {
+                    if(error) {
+                        console.error(error);
+                        res.status(500).send('Erreur lors de la requête de suppression');
+                        return;
+                    }
+                    
+                    query(
                 `DELETE FROM itineraire WHERE id = ?`, [id],
                 (deleteError) => {
                     if (deleteError) {
@@ -43,6 +53,9 @@ export default (req, res) => {
                     res.redirect(`/admin/itineraire`);
                 }
             );
+                }
+                )
+            
         }
     );
 };

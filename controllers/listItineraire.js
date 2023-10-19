@@ -7,6 +7,6 @@ export default (req, res) => {
       res.status(500).send('Erreur serveur');
       return;
     }
-    res.render('home', { itineraires });
+    res.render('listItineraire', { itineraires });
   });
 };

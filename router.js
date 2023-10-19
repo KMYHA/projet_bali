@@ -2,8 +2,8 @@ import express from "express";
 import query from './database.js'
 const router = express.Router();
 
-
-import listItineraire from "./controllers/listItineraire.js";
+import homeController from'./controllers/homeController.js';
+import listItineraire from './controllers/listItineraire.js';
 import { loginForm, login } from './controllers/login.js';
 import { addItineraire, addItineraireSubmit } from './controllers/createItineraire.js';
 import detailsItineraire from './controllers/detailsItineraire.js';
@@ -19,7 +19,7 @@ import deleteUser from './controllers/deleteUser.js';
 import adminUser from './controllers/adminUser.js';
 import detailsUser from './controllers/detailsUser.js';
 import {addNewsletter,addNewsletterSubmit} from './controllers/createNewsletter.js'
-
+import logout from './controllers/logout.js';
 
 const checkAuthentification = (req, res, next) => {
     if (!req.session.isAdmin) {
@@ -57,7 +57,8 @@ router.use((req, res, next) => {
     });
 });
 
-router.get('/', listItineraire);
+router.get('/', homeController);
+router.get('/itineraires', listItineraire);
 router.get('/itineraire/add', checkAuthentification, addItineraire);
 router.post('/itineraire/add', checkAuthentification, addItineraireSubmit);
 router.get('/itineraire/:id', detailsItineraire);
@@ -77,6 +78,7 @@ router.get('/addUser', addUser);
 router.post('/addUser', addUserSubmit);
 router.get('/login', loginForm);
 router.post('/login', login);
+router.get('/logout', logout);
 router.get('/user/:id', detailsUser);
 router.get('/user/:id/delete', checkAuthentification, deleteUser);
 
