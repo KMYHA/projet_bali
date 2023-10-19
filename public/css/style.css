@@ -1,12 +1,13 @@
 /******** GENERAL ********/
-
+* {
+    box-sizing: border-box;
+}
 html {
     font-size: 62.5%;
     font-family: "Lato";
 }
 
 body {
-    /*box-sizing: border-box;*/
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
@@ -17,27 +18,27 @@ body {
 
 img {
     /*max-width: 60%;*/
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
-
-header img,
-headerAdmin img {
-    /*max-width: 50%;*/
-    width: 50%;
-    height: auto;
-}
 
 li{
     list-style:none;
 }
 
-footer {
+
+/******** HEADER ********/
+/******** NAVBAR ********/
+
+.nav_header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     background-color: #cbbfb4;
+    padding:10px;
 }
 
-/******** NAVBAR ********/
 
 nav a {
     text-decoration: none;
@@ -53,22 +54,15 @@ nav a:hover {
 
 .header_logo {
     cursor: pointer;
+    width: 20%;
 }
 
 
 /******** MENU BURGER ********/
 
-h1{
-    font-size:1rem;
-}
-
-nav{
-    background-color: #cbbfb4;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px;
-    
+h1 a{
+    color: #473c38;
+    font-size:2.5rem;
 }
 
 nav ul{
@@ -76,10 +70,13 @@ nav ul{
     justify-content:space-between;
     width:100%;
     font-size:0.5rem;
+    margin: 0;
 }
 
-nav li {
+nav li a {
     color:#473c38;
+    font-size:1rem;
+    font-weight:bold;
 }
 
 #icons{
@@ -90,24 +87,27 @@ nav li {
 }
 
     #icons:before{
-        content:"\2630"
+        color: #473c38;
+        content:"\2630";
+        font-size:3rem;
+        
     }
 
-.active #icons:before{
+#icons.js-toggle-icon:before{
+    color: #473c38;
     content:"\2715";
+    font-size:3rem;
 }
 
 nav ul{
     position:absolute;
-    left:-100%;
-    top:13%;
+    right:-100%;
     flex-direction:column;
     background-color:#d1c8c1;
     width:100%;
     text-align:center;
     transition:0.25s;
     padding:0;
-    
 }
 
 nav li{
@@ -118,9 +118,100 @@ nav li:hover{
     background-color:#cbbfb4;
 }
 
-.active ul{
-    left:0;
+.js-visibility{
+    right:0;
 }
+
+.js-main-menu{
+    position:relative;
+    top:75px;
+}
+
+/******** FOOTER ********/
+footer{
+    background-color: #cbbfb4;
+}
+
+.footer_logo{
+    width:40%;
+    height:auto;
+    margin:auto;
+    padding-top:10px;
+}
+
+.footer_logo h4{
+    font-size:2.5rem;
+    margin-top:5px;
+}
+
+.footer a{
+  text-decoration:none;  
+  color:#473c38;
+}
+
+.footer a:hover{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.footer_contact, .social_network {
+    padding:5px;
+    text-align:center;
+}
+
+.social_network{
+    text-align: center;
+    margin:0;
+}
+
+.social_network h4{
+    margin:10px;
+    font-size:2rem;
+}
+
+.social_network i{
+    font-size:40px;
+    text-align: center; 
+    padding:15px;
+}
+
+.social_network p{
+    margin-top:10px;
+}
+
+.footer_final{
+    font-size:14px;
+    text-align:center;
+    font-style:italic;
+    font-weight:bold;
+    padding:10px;
+}
+
+/******** HOME ********/
+.home h2{
+    font-size:20px;
+    text-align:center;
+}
+
+/******** SLIDER ********/
+.slider{
+    height:60vh;
+    position:relative;
+    margin-top:20px;
+}
+
+.slider img{
+     width:100%;
+     height:auto;
+     position:absolute;
+     top:0;
+     opacity:0;
+     transition:opacity 5s ;
+}
+
+img.active{
+    opacity:1;
+}
+
 
 /******** ITINERAIRES ********/
 
@@ -174,40 +265,6 @@ nav li:hover{
 
 .itinerary_info a:hover {
     background-color: #86654b;
-}
-
-
-
-/******** FOOTER ********/
-.footer a{
-  text-decoration:none;  
-  color:#473c38;
-}
-.footer_contact, .social_network {
-    padding:10px;
-    margin-top:15px;
-}
-
-.footer_contact, .social_network h4{
-    text-align:center;
-    font-size:16px;
-}
-.social_network{
-    text-align: center; 
-}
-
-.social_network i{
-    font-size:40px;
-    text-align: center; 
-    padding:15px;
-}
-
-.footer_final{
-    font-size:14px;
-    text-align:center;
-    font-style:italic;
-    font-weight:bold;
-    padding:10px;
 }
 
 
