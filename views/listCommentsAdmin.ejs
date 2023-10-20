@@ -1,4 +1,6 @@
 <%- include('headerAdmin') -%>
+<section class="admin_comment">
+    <h2>COMMENTAIRES</h2>
         <% for(const Commentaire of Commentaires) { %>
             <ul>
                 <li>
@@ -10,8 +12,10 @@
                     </p>
                 </li>
             </ul>
-            <a href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
+            <div class="action_buttons">
+            <a id="admin_comment_btn" href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
+            </div>
             <% } %>
-
+</section>
     </main>
 <%- include('footer') -%>

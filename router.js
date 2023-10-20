@@ -40,6 +40,7 @@ const checkAuthentificationUser = (req, res, next) => {
 
 router.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
+    res.locals.pseudo=req.session.pseudo;
     next();
 });
 

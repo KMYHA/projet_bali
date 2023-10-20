@@ -4,7 +4,7 @@ import xss from 'xss'
 
 export function addCommentSubmit (req, res) {
 
-  const pseudo=req.body.pseudo;
+  const pseudo=req.session.pseudo;
   const message=req.body.message;
 
 
@@ -23,7 +23,7 @@ export function addCommentSubmit (req, res) {
 
 export function addComment(req, res) {
   query(
-    'SELECT *, DATE_FORMAT(date_de_creation, "%Y-%m-%d %H:%i:%s") AS dateFormatee FROM Commentaire',
+    'SELECT *, DATE_FORMAT(date_de_creation, "%Y-%m-%d %H:%i:%s") AS dateFormatee FROM Commentaire ORDER BY date_de_creation DESC',
     [],
     (error, result) => {
       if (error) {

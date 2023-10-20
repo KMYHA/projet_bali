@@ -1,5 +1,5 @@
 <%- include('header') -%>
-        <div>
+        <section class="itinerary_details">
         <h2  class="itinerary_title_1">
             <%= itineraire.titre_1 %>
         </h2>
@@ -43,11 +43,18 @@
             <h3>ITINERAIRE SUR PLAN</h3>
             <iframe src="<%= itineraire.plan %>"></iframe>
         </section>
-        <a  class="redirection_link" href="/">Revenir à la liste des itinéraires</a>
+        <a  class="redirection_link" href="/itineraires">Revenir à la liste des itinéraires</a>
         </section>
+        
+        
             <section>
         <h2>Newsletter</h2>
-        <form method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
+        
+        <div class="button_container">
+            <button id="open_pop_up">Cliquez ici</button>
+        </div>
+        <div id="js-pop-up-form">
+            <form method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
     <p>
         <label for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
         <input type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
@@ -60,6 +67,8 @@
 
     <button type="submit">Envoyer</button>
 </form>
+        </div>
+        
     </section>     
     </main>
 <%- include('footer') -%>

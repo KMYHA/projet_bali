@@ -22,11 +22,18 @@ img {
     height: auto;
 }
 
+ul{
+    margin:0;
+    padding:0;
+}
 
 li{
     list-style:none;
 }
 
+main{
+    width:100%;
+}
 
 /******** HEADER ********/
 /******** NAVBAR ********/
@@ -101,12 +108,12 @@ nav li a {
 
 nav ul{
     position:absolute;
-    right:-100%;
+    left:-100%;
     flex-direction:column;
     background-color:#d1c8c1;
     width:100%;
     text-align:center;
-    transition:0.25s;
+    transition:0.6s;
     padding:0;
 }
 
@@ -119,7 +126,7 @@ nav li:hover{
 }
 
 .js-visibility{
-    right:0;
+    left:0;
 }
 
 .js-main-menu{
@@ -192,9 +199,46 @@ footer{
     text-align:center;
 }
 
+figure {
+    width:70%;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    background-color:#e8e3de;
+}
+
+figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+figure figcaption {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+figure a {
+    text-decoration: none;
+    color: #473c38;
+    transition: color 0.3s;
+    text-align:justify;
+}
+
+figure a:hover {
+    color: #544541;
+}
+
+
 /******** SLIDER ********/
 .slider{
-    height:60vh;
+    height:30vh;
     position:relative;
     margin-top:20px;
 }
@@ -219,7 +263,6 @@ img.active{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*text-decoration:none;*/
 }
 
 .itinerary_section {
@@ -246,21 +289,24 @@ img.active{
 
 .itinerary_info,
 .itinerary_info a {
-    font-size: 10px;
+    font-size: 15px;
     margin: 10px;
     text-align: center;
     text-decoration: none;
+    padding-bottom:15px;
 }
 
 .itinerary_info {
     margin-top: 20px;
 }
 
-.itinerary_info a {
+.itinerary_info a, .update_btn, .delete_btn, #add_btn, #admin_comment_btn, #admin_user_btn{
     background-color: #473c38;
     padding: 7px;
     color: #f6f4f3;
     border-radius: 5%;
+    text-align:center;
+    text-decoration:none;
 }
 
 .itinerary_info a:hover {
@@ -269,35 +315,348 @@ img.active{
 
 
 /******** DETAILS ITINERAIRES ********/
+.itinerary_details{
+    width:100%;
+}
 
 .redirection_link{
     color: #473c38;
-    padding-left:10px;
+    margin:15px;
+    font-weight:bold;
+    font-size:2rem;
 }
 
 .redirection_link:hover {
     color: #86654b;
 }
 
-.itinerary_title_1{
+.itinerary_title_1, h3{
     text-align:center;
 }
 
-
-.details_part_1{
+.itinerary_details p{
+    margin:15px ;
+    text-align:justify;
+    padding-bottom:15px;
+}
+.details_plan{
     display:flex;
     flex-direction:column;
-    margin:7px;
-    width:100%;
-}
-
-.details_img_1{
     width:100%;
     height:auto;
-    display:flex;
-    justify-content:center;
+    margin-bottom:10px;
+}
+
+.details_plan h3{
+    margin:10px;
+}
+
+.details_plan iframe{
+    width:90%;
+    height:auto;
+    margin:15px auto;
 }
 
 
+/******** LOGIN ********/
 
+.login_form{
+    margin:50px auto;
+    width:80%;
+    height:auto;
+    border:1px solid #473c38;
+    border-radius:5%;
+}
 
+.login_form h2 {
+  text-align: center;
+  color: #473c38;
+  text-decoration:underline;
+  margin-bottom:15px;
+}
+
+.login_form div{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.comment_form{
+    width:100%;
+    background-color:#f6f4f3;
+    margin:50px;
+}
+
+.login_form label {
+  display: block;
+  margin: 10px;
+  color: #473c38;
+}
+
+.login_form input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.login_btn {
+  width: 90%;
+  padding: 10px;
+  background-color: #473c38;
+  color: #f6f4f3;
+  font-weight:bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 10px auto;
+}
+
+.login_creation a{
+    margin:10px;
+    color:#473c38;
+    padding:10px;
+}
+
+/******** POP-UP ********/
+ 
+#open_pop_up{
+    height:50px;
+    width:300px;
+    background-color: #473c38;
+    color:#f6f4f3;
+    border:none;
+    cursor:pointer;
+    margin:0 auto;
+}
+
+.button_container{
+    width:100%;
+    text-align:center;
+}
+
+/*#js-pop-up-form{*/
+/*    height:300px;*/
+/*    width:30%;*/
+/*    background-color:#cbbfb4;*/
+/*    border: 1px solid #544541 ;*/
+/*    position:absolute;*/
+/*    top: -300px;*/
+/*    left:35%;*/
+/*    transition: top 0.5s;*/
+/*}*/
+/*.js-pop-up{*/
+/*    top: 0px;*/
+/*}*/
+
+/******** COMMENTAIRES ********/
+
+.comment_page::before, .admin_comment::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/image/mer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3;
+  z-index: -1; 
+}
+
+.comment_page, .admin_comment {
+  position: relative;
+}
+
+.comment_img img{
+    width:100%;
+    height:auto;
+    margin-left:20px;
+}
+
+.comment_page h2{
+    padding-top:10px;
+    text-align:center;
+}
+.comment_intro p{
+    margin:10px;
+    padding:10px;
+    text-align:justify;
+}
+
+.comment_form {
+    margin: 50px auto;
+    width: 80%;
+    background-color: #f6f4f3;
+    border: 2px solid #473c38;
+    padding: 20px;
+}
+
+.comment_form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.comment_form p {
+    margin: 5px;
+    font-weight: bold;
+    color: #473c38;
+    font-size:2rem;
+}
+
+.comment_form label {
+    display: block;
+    margin: 10px;
+    color: #473c38;
+    font-size:2rem;
+}
+
+.comment_form textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment_form button {
+    width: 90%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 10px auto;
+}
+
+.comment_form a {
+    margin: 10px;
+    color: #473c38;
+    padding: 10px;
+}
+
+#comment_login{
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+.comments ul {
+    margin: 0;
+    padding: 0;
+}
+
+.comments li, .admin_comment li{
+    width:80%;
+    background-color: #f6f4f3;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.comments p {
+    margin: 5px 0;
+}
+
+/******** A PROPOS ********/
+.culture_part_1 h2{
+    text-align:center;
+}
+
+.culture_part_1, .culture_part_2{
+    display:flex;
+    flex-direction:column;
+}
+
+.culture_part_1 p, .culture_part_2 p{
+    margin:10px;
+    text-align:left;
+    text-align:justify;
+}
+
+/******** PARTIE ADMIN ********/
+/******** ITINERAIRE ********/
+
+.admin_itinerary h2,h3{
+    text-align:center;
+}
+
+.admin_img_container{
+    width:80%;
+    height:auto;
+    display:flex;
+    margin:auto;
+}
+
+.admin_img_container img{
+    width:100%;
+    height:auto;
+}
+
+.admin_itinerary_section{
+    display:flex;
+    flex-direction:column;
+}
+
+.action_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.action_buttons a{
+    width:40%;
+    margin:20px 10px;
+}
+
+#add_btn{
+    padding:15px;
+}
+
+/******** COMMENTAIRES ********/
+.admin_comment h2{
+    text-align:center;
+}
+
+#admin_comment_btn{
+    text-align:center;
+    align-items:center;
+    width:60%;
+    margin:10px;
+}
+
+/******** USER ********/
+
+.admin_user h2{
+    text-align:center;
+}
+
+.admin_user li{
+    width:80%;
+    background-color: #cbbfb4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.admin_user a{
+    text-decoration:none;
+    color:#f6f4f3;
+    font-weight:bold;
+}
+
+#admin_user_btn{
+    text-align:center;
+    align-items:center;
+    width:60%;
+    margin:10px 0;
+}

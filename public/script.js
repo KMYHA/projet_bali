@@ -1,6 +1,7 @@
 const icons = document.getElementById('icons');
 const nav = document.querySelector('nav ul');
 const main_menu = document.getElementById('main_menu')
+
 /******** MENU BURGER ********/
 
 icons.addEventListener("click", () => {
@@ -14,8 +15,7 @@ icons.addEventListener("click", () => {
 
 const img_slider = document.querySelectorAll(".js-img-slider")
 let step = 0;
-const next = document.querySelector('.next')
-const previous = document.querySelector('.previous')
+let intervalId;
 
 function enleverActiveImg() {
     for (let i = 0; i < img_slider.length; i++) {
@@ -23,11 +23,32 @@ function enleverActiveImg() {
     }
 }
 
-setInterval(function() {
-step++;
-if (step >= img_slider.length) {
-    step = 0
+function stopSlider() {
+    clearInterval(intervalId);
 }
-enleverActiveImg();
-img_slider[step].classList.add('active')
-}, 4000)
+
+function startSlider() {
+    intervalId = setInterval(function() {
+        step++;
+        if (step >= img_slider.length) {
+            step = 0
+        }
+        enleverActiveImg();
+        img_slider[step].classList.add('active')
+    }, 3000)
+}
+if (img_slider.length>0){
+    startSlider()
+}
+
+
+
+
+/******** POP-UP ********/
+
+// const openPopup=document.getElementById('open_pop_up');
+// const popup=document.getElementById('js-pop-up-form');
+
+// openPopup.addEventListener("click", () => {
+//     popup.classList.toggle('js-pop-up');
+// })

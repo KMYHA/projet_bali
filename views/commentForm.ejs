@@ -1,35 +1,40 @@
 <%- include('header') -%>
+        <section class="comment_page">
+<!--                     <div class="comment_img">   -->
+<!--  <img src="/image/mer.jpg" alt="photo de la mer">-->
+<!--</div>-->
+            
         <h2>COMMENTAIRES</h2>
-        <section>
-            <div>
-                <p>N'hésite pas à nous laisser un commentaire, une expérience ou autre sur les différents itinéraires ou sur ton propre itinéraire à Bali ! Cela permettra aux autres voyageurs d'avoir d'autres retours !</p>
+            <div class="comment_intro">
+                <p>N'hésite pas à nous laisser un commentaire, une expérience ou autre sur les différents itinéraires ou sur ton propre itinéraire à Bali !</p>
+                <p>Cela permettra aux autres voyageurs d'avoir d'autres retours !</p>
             </div>
-            <div>
-                <img src="../image/offrande.jpg" alt="photo des panier d'offrandes hindoues">
-            </div>
-        </section>
+
+        
         <section>
-            <form method="post">
-                <div>
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" name="pseudo" id="pseudo" value="pseudo" placeholder="Ton Pseudo" required="required">
+            <form method="post" class="comment_form">
+                <div class="form-group">
+                   <p>Pseudo : </p>
+                   <p><%=locals.pseudo%></p>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="message">Ton commentaire</label>
                     <textarea id="message" name="message" rows="5" cols="33" minlength="10" placeholder="Ecris ici ton commentaire" required="required"></textarea>
                 </div>
-                <div>
+                <div class="form-group">
+                    <a id="comment_login" href="/login">Tu dois te connecter pour pouvoir ajouter un commentaire</a>
                     <button type="submit">Envoyer</button>
                 </div>
             </form>
         </section>
-        <section>
-           <a href="/login">Tu dois te connecter pour pouvoir ajouter un commentaire</a>
+        <section class="comments">
          <% for (commentaire of commentaires) { %>
       <ul>
         <li>
             <p>
+                <b>
             <%= commentaire.pseudo %> : 
+                </b>
             </p>
           <p>
             <%= commentaire.dateFormatee %>
@@ -40,6 +45,7 @@
         </li>
       </ul>
     <% } %>
-        </section> 
+        </section>
+        </section>
     </main>
 <%- include('footer') -%>

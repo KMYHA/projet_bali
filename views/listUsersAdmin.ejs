@@ -1,16 +1,21 @@
 <%- include('headerAdmin') -%>
+<section class="admin_user">
+    <h2>USER</h2>
         <% for(const User of Users) { %>
             <ul>
                 <li>
                     <p>
-                        <a href="/user/<%= User.id %>"></p>
-                    <p>
                         <%= User.pseudo %>
+                    </p>
+                    <p>
+                        <%= User.email %>
                     </p>
                 </li>
             </ul>
-            <a href="/user/<%= User.id %>/delete">Supprimer l'utilisateur</a>
+            <div class="action_buttons">
+            <a id="admin_user_btn" href="/user/<%= User.id %>/delete">Supprimer l'utilisateur</a>
+            </div>
             <% } %>
-
+</section>
     </main>
 <%- include('footer') -%>

@@ -36,6 +36,7 @@ export function login(req, res) {
                 req.session.isLogged = true; 
                 //stockage de l'id User
                 req.session.idUser = user[0].id;
+                req.session.pseudo = user[0].pseudo;
                 
                 if (user[0].role === 'admin') {
                     // Utilisateur est un administrateur
