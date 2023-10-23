@@ -1,6 +1,6 @@
 <%- include('headerAdmin') -%>
-        <h2>Modification du formulaire d'itinéraire</h2>
-        <form method="POST" action="/itineraire/<%= itineraire.id %>/update">
+        <form class="updateItineraireForm" method="POST" action="/itineraire/<%= itineraire.id %>/update">
+            <h2>Modification du formulaire d'itinéraire</h2>
             <p>
                 <label for="titre_1">Titre Principal</label>
                 <input type="text" name="titre_1" id="titre_1" value="<%= itineraire.titre_1 %>">
@@ -11,7 +11,7 @@
             </p>
             <p>
                 <label for="texte_1">Texte 1</label>
-                <textarea type="text" name="texte_1" id="texte_1" value="" />
+                <textarea type="text" name="texte_1" id="texte_1" value=""  rows="10" cols="33" />
                 <%= itineraire.texte_1 %>
                     </textarea>
             </p>
@@ -21,7 +21,7 @@
             </p>
             <p>
                 <label for="texte_2">Texte 2</label>
-                <textarea type="text" name="texte_2" id="texte_2" value="" />
+                <textarea type="text" name="texte_2" id="texte_2" value="" rows="10" cols="33" />
                 <%= itineraire.texte_2 %>
                     </textarea>
             </p>
@@ -31,7 +31,7 @@
             </p>
             <p>
                 <label for="texte_3">Texte 3</label>
-                <textarea type="text" name="texte_3" id="texte_3" value="" />
+                <textarea type="text" name="texte_3" id="texte_3" value="" rows="10" cols="33" />
                 <%= itineraire.texte_3 %>
                     </textarea>
             </p>
@@ -40,7 +40,7 @@
                 <input type="text" name="plan" id="plan" value="<%= itineraire.plan%>">
             </p>
             <p>
-                <button type="submit">Enregistrer</button>
+                <button class="update_btn" type="submit">Enregistrer</button>
             </p>
         </form>
     </main>

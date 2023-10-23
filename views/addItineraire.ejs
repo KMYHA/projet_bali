@@ -1,42 +1,42 @@
 <%- include('headerAdmin') -%>
-    <form method="post" enctype="multipart/form-data">
-        <p>
+    <form class="addItineraireForm" method="post" enctype="multipart/form-data">
+        <div class="add_area">
             <label for="titre_1">Titre Principal</label>
             <input id="titre_1" name="titre_1" type="text" />
-        </p>
-        <p>
+        </div>
+        <div>
             <label for="images">Sélectionnez 3 images :</label>
-            <input type="file" name="images" id="images" accept=".jpg,.jpeg,.png" multiple>
-        </p>
-        <p>
+            <input class="add_file" type="file" name="images" id="images" accept=".jpg,.jpeg,.png" multiple>
+        </div>
+        <div>
             <label for="titre_2">Titre texte 1</label>
             <input id="titre_2" name="titre_2" type="text" />
-        </p>
-        <p>
+        </div>
+        <div>
             <label for="texte_1">Texte 1</label>
-            <textarea id="texte_1" name="texte_1" /></textarea>
-        </p>
-        <p>
+            <textarea id="texte_1" name="texte_1" rows="10" cols="33"/></textarea>
+        </div>
+        <div>
             <label for="titre_3">Titre texte 2</label>
             <input id="titre_3" name="titre_3" type="text" />
-        </p>
-        <p>
+        </div>
+        <div>
             <label for="texte_2">Texte 2</label>
-            <textarea id="texte_2" name="texte_2" /></textarea>
-        </p>
-        <p>
+            <textarea id="texte_2" name="texte_2" rows="10" cols="33" /></textarea>
+        </div>
+        <div>
             <label for="titre_4">Titre texte 3</label>
             <input id="titre_4" name="titre_4" type="text" />
-        </p>
-        <p>
+        </div>
+        <div>
             <label for="texte_3">Texte 3</label>
-            <textarea id="texte_3" name="texte_3" /></textarea>
-        </p>
-        <p>
+            <textarea id="texte_3" name="texte_3" rows="10" cols="33" /></textarea>
+        </div>
+        <div>
             <label for="plan">URL Google My Maps :</label>
             <input type="text" id="plan" name="plan">
-        </p>
-        <button type="submit">Envoyer</button>
+        </div>
+        <button class="add_btn" type="submit">Envoyer</button>
     </form>
     </main>
 <%- include('footer') -%>

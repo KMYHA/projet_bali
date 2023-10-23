@@ -50,7 +50,7 @@ export default (req, res) => {
                         res.status(500).send('Erreur lors de la requête de suppression');
                         return;
                     }
-                    res.redirect(`/admin/itineraire`);
+                    res.send(`L'itinéraire à bien été supprimé`);
                 }
             );
                 }

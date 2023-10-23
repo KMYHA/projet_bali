@@ -34,14 +34,14 @@
                 </div>
                 <ul>
                     <li><a href="/">Home</a></li>
+                    <% if (locals.isLogged) { %>
+                    <li><a href="/logout">Logout</a></li>
+                    <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                    <% } %>
                     <li><a href="/itineraires">Itinéraires</a>
                     <li><a href="/aPropos">A propos de Bali</a></li>
                     <li><a href="/comment">Commentaires</a></li>
-                     <% if (locals.isLogged) { %>
-                    <li><a href="/logout">Logout</a></li>
-                <% } else { %>
-                    <li><a href="/login">Login</a></li>
-                <% } %>
                 </ul>
             </nav>
         </section>

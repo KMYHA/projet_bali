@@ -1,22 +1,22 @@
 <%- include('header')-%>
-        <section>
+        <section class="registration_section">
             <h2>Inscription</h2>
-            <form method="post">
-                <p>
+            <form class="registration_form" method="post">
+                <div>
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" value="email" required>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="pseudo">Pseudo</label>
                     <input type="text" name="pseudo" id="pseudo" value="pseudo" required>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" value="password" required>
-                </p>
-                <p>
-                    <button type="submit">Créer mon compte</button>
-                </p>
+                </div>
+                <div>
+                    <button class="registration_btn" type="submit">Créer mon compte</button>
+                </div>
             </form>
         </section>
     </main>

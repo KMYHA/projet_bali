@@ -129,7 +129,7 @@ nav li:hover{
     left:0;
 }
 
-.js-main-menu{
+.js-main-menu, footer{
     position:relative;
     top:75px;
 }
@@ -419,36 +419,96 @@ img.active{
     padding:10px;
 }
 
-/******** POP-UP ********/
- 
-#open_pop_up{
-    height:50px;
-    width:300px;
-    background-color: #473c38;
-    color:#f6f4f3;
-    border:none;
-    cursor:pointer;
-    margin:0 auto;
+/******** CREATION DE COMPTE ********/
+
+
+.registration_section {
+  text-align: center;
+  background-color: #f6f4f3;
+  border: 2px solid #473c38;
+  padding: 20px;
+  width: 70%;
+  margin: 50px auto;
+  border-radius:5%;
 }
 
-.button_container{
-    width:100%;
+.registration_section h2 {
+  padding-top: 10px;
+  text-align: center;
+  color: #473c38;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-decoration:underline;
+}
+
+.registration_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration_form label {
+  width:50%;
+  margin-bottom: 20px;
+  color: #473c38;
+  font-size: 1.5rem;
+}
+
+.registration_form input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius:5%;
+  margin:10px;
+}
+
+.registration_btn{
+  width: 90%;
+  padding: 10px;
+  background-color: #473c38;
+  color: #f6f4f3;
+  font-weight: bold;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  margin: 20px 10px auto;
+}
+
+.registration_btn:hover {
+  background-color: #604e4a;
+}
+
+/******** POP-UP ********/
+ .popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    background-color:#cbbfb4;
+    border: 1px solid #31241e;
+}
+
+.popup h2{
     text-align:center;
 }
 
-/*#js-pop-up-form{*/
-/*    height:300px;*/
-/*    width:30%;*/
-/*    background-color:#cbbfb4;*/
-/*    border: 1px solid #544541 ;*/
-/*    position:absolute;*/
-/*    top: -300px;*/
-/*    left:35%;*/
-/*    transition: top 0.5s;*/
-/*}*/
-/*.js-pop-up{*/
-/*    top: 0px;*/
-/*}*/
+newsletter_box {
+    margin-bottom:10px;
+}
+
+#btn_close{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    text-decoration:none;
+    padding:5px;
+    background-color:#31241e;
+    color:#f6f4f3;
+}
+
 
 /******** COMMENTAIRES ********/
 
@@ -548,6 +608,11 @@ img.active{
     text-align:center;
 }
 
+.comments{
+    max-height:400px;
+    overflow:auto;
+}
+
 .comments ul {
     margin: 0;
     padding: 0;
@@ -612,7 +677,7 @@ img.active{
     align-items: center; 
 }
 
-.action_buttons a{
+.action_buttons button{
     width:40%;
     margin:20px 10px;
 }
@@ -654,9 +719,98 @@ img.active{
     font-weight:bold;
 }
 
+
 #admin_user_btn{
     text-align:center;
     align-items:center;
     width:60%;
     margin:10px 0;
+}
+
+/******** AJOUT ITINERAIRES ********/
+
+.addItineraireForm {
+  text-align: center;
+  background-color: #f6f4f3;
+  padding: 20px;
+  width: 90%;
+  margin:auto;
+}
+
+.addItineraireForm h2{
+    text-decoration:underline;
+}
+
+.addItineraireForm label {
+  width: 50%;
+  margin-bottom: 20px;
+  color: #473c38;
+  font-size: 1.5rem;
+}
+
+.addItineraireForm input,.addItineraireForm textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  margin: 10px;
+}
+
+.add_btn {
+  width: 90%;
+  padding: 10px;
+  background-color: #473c38;
+  color: #f6f4f3;
+  font-weight: bold;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  margin: 20px 10px auto;
+}
+
+.add_btn:hover {
+  background-color: #604e4a;
+}
+
+/******** UPDATE ITINERAIRES ********/
+.updateItineraireForm {
+  text-align: center;
+  background-color: #f6f4f3;
+  padding: 10px;
+  width: 90%;
+  margin:auto;
+}
+
+.updateItineraireForm h2{
+    text-decoration:underline;
+}
+
+.updateItineraireForm label {
+  width: 50%;
+  margin-bottom: 20px;
+  color: #473c38;
+  font-size: 1.5rem;
+}
+
+.updateItineraireForm input, .updateItineraireForm textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.update_btn, .delete_btn {
+  width: 90%;
+  padding: 10px;
+  background-color: #473c38;
+  color: #f6f4f3;
+  font-weight: bold;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  margin: 20px 10px auto;
+}
+
+.update_btn:hover, .delete_btn:hover {
+  background-color: #604e4a;
 }

@@ -48,27 +48,26 @@
         
         
             <section>
-        <h2>Newsletter</h2>
-        
-        <div class="button_container">
-            <button id="open_pop_up">Cliquez ici</button>
-        </div>
-        <div id="js-pop-up-form">
-            <form method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
-    <p>
-        <label for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
-        <input type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
-    </p>
 
+        <div class="popup" id="popup">
+        <div id="popup_container">
+            <h2>Newsletter</h2>
+            <form method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
     <div>
+        <label class="newsletter_box" for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
+        <input type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
+    </div>
+
+    <div class="newsletter_box">
         <label for="email">Email</label>
         <input id="email" type="email" name="email" />
     </div>
 
     <button type="submit">Envoyer</button>
+    <a href="javascript:void(0)" id="btn_close">Fermer</a>
 </form>
         </div>
-        
+        </div>
     </section>     
     </main>
 <%- include('footer') -%>
