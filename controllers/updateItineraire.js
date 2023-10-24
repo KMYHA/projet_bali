@@ -1,5 +1,5 @@
 import query from '../database.js';
-
+import xss from 'xss';
 
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
 export function updateItineraire(req, res) {
@@ -46,14 +46,14 @@ export function updateItineraireSubmit(req, res) {
         
             
         WHERE id = ?`, [
-            req.body.plan,
-            req.body.texte_1,
-            req.body.texte_2,
-            req.body.texte_3,
-            req.body.titre_1,
-            req.body.titre_2,
-            req.body.titre_3,
-            req.body.titre_4,
+            xss(req.body.plan),
+            xss(req.body.texte_1),
+            xss(req.body.texte_2),
+            xss(req.body.texte_3),
+            xss(req.body.titre_1),
+            xss(req.body.titre_2),
+            xss(req.body.titre_3),
+            xss(req.body.titre_4),
             id
 
         ],

@@ -1,49 +1,60 @@
 /******** GENERAL ********/
+
 * {
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
     font-family: "Lato";
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
     color: #473c38;
     background-color: #f6f4f3;
-    width:100%;
+    width: 100%;
 }
 
 img {
-    /*max-width: 60%;*/
     width: 100%;
     height: auto;
 }
 
-ul{
-    margin:0;
-    padding:0;
+ul {
+    margin: 0;
+    padding: 0;
 }
 
-li{
-    list-style:none;
+li {
+    list-style: none;
 }
 
-main{
-    width:100%;
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#main_menu {
+    margin: 0;
 }
 
 /******** HEADER ********/
-/******** NAVBAR ********/
+
+        /******** NAVBAR ********/
 
 .nav_header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #cbbfb4;
-    padding:10px;
+    padding: 10px;
 }
 
 
@@ -65,195 +76,207 @@ nav a:hover {
 }
 
 
-/******** MENU BURGER ********/
+        /******** MENU BURGER ********/
 
-h1 a{
+h1 a {
     color: #473c38;
-    font-size:2.5rem;
+    font-size: 2.5rem;
 }
 
-nav ul{
-    display:flex;
-    justify-content:space-between;
-    width:100%;
-    font-size:0.5rem;
+nav ul {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.5rem;
     margin: 0;
+    position: relative;
+    flex-direction: column;
+    background-color: #d1c8c1;
+    text-align: center;
+    padding: 0;
 }
 
-nav li a {
-    color:#473c38;
-    font-size:1rem;
-    font-weight:bold;
+nav li {
+    padding: 3px 0;
 }
 
-#icons{
-    cursor:pointer;
-    display:none;
-    display:block;
-    font-size:14px;
-}
-
-    #icons:before{
-        color: #473c38;
-        content:"\2630";
-        font-size:3rem;
-        
-    }
-
-#icons.js-toggle-icon:before{
-    color: #473c38;
-    content:"\2715";
-    font-size:3rem;
-}
-
-nav ul{
-    position:absolute;
-    left:-100%;
-    flex-direction:column;
-    background-color:#d1c8c1;
-    width:100%;
-    text-align:center;
-    transition:0.6s;
-    padding:0;
-}
-
-nav li{
-    padding:3px 0;
-}
-
-nav li:hover{
-    background-color:#cbbfb4;
-}
-
-.js-visibility{
-    left:0;
-}
-
-.js-main-menu, footer{
-    position:relative;
-    top:75px;
-}
-
-/******** FOOTER ********/
-footer{
+nav li:hover {
     background-color: #cbbfb4;
 }
 
-.footer_logo{
-    width:40%;
-    height:auto;
-    margin:auto;
-    padding-top:10px;
+nav li a {
+    color: #473c38;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-.footer_logo h4{
-    font-size:2.5rem;
-    margin-top:5px;
+#icons {
+    cursor: pointer;
+    display: none;
+    display: block;
+    font-size: 14px;
 }
 
-.footer a{
-  text-decoration:none;  
-  color:#473c38;
+#icons:before {
+    color: #473c38;
+    content: "\2630";
+    font-size: 3rem;
+
 }
 
-.footer a:hover{
+#icons.js-toggle-icon:before {
+    color: #473c38;
+    content: "\2715";
+    font-size: 3rem;
+}
+
+@keyframes slideIn {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+
+
+.js-visibility {
+    display: flex;
+    animation: slideIn 0.6s;
+
+}
+
+
+        /******** FOOTER ********/
+
+footer {
+    background-color: #cbbfb4;
+}
+
+.footer_logo {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.footer_logo h4 {
+    font-size: 2.5rem;
+    margin-top: 5px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #473c38;
+}
+
+.footer a:hover {
     color: #FFFFFF;
     font-weight: bold;
 }
-.footer_contact, .social_network {
-    padding:5px;
-    text-align:center;
-}
 
-.social_network{
+.footer_contact,
+.social_network {
+    padding: 5px;
     text-align: center;
-    margin:0;
 }
 
-.social_network h4{
-    margin:10px;
-    font-size:2rem;
+.social_network {
+    text-align: center;
+    margin: 0;
 }
 
-.social_network i{
-    font-size:40px;
-    text-align: center; 
-    padding:15px;
+.social_network h4 {
+    margin: 10px;
+    font-size: 2rem;
 }
 
-.social_network p{
-    margin-top:10px;
+.social_network i {
+    font-size: 40px;
+    text-align: center;
+    padding: 15px;
 }
 
-.footer_final{
-    font-size:14px;
-    text-align:center;
-    font-style:italic;
-    font-weight:bold;
-    padding:10px;
+.social_network p {
+    margin-top: 10px;
+}
+
+.footer_final {
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /******** HOME ********/
-.home h2{
-    font-size:20px;
-    text-align:center;
+
+home {
+    display: flex;
+    flex-direction: column;
 }
 
-figure {
-    width:70%;
+.figures h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.home_figure {
+    width: 70%;
     margin: 30px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 30px;
-    background-color:#e8e3de;
+    background-color: #e8e3de;
 }
 
-figure img {
+.home_figure img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-figure figcaption {
+.home_figure figcaption {
     margin: 10px 0;
     font-size: 14px;
     line-height: 1.5;
     text-align: left;
 }
 
-figure a {
+.home_figure a {
     text-decoration: none;
     color: #473c38;
     transition: color 0.3s;
-    text-align:justify;
+    text-align: justify;
 }
 
-figure a:hover {
-    color: #544541;
+        /******** SLIDER ********/
+
+.slider {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30vh;
 }
 
-
-/******** SLIDER ********/
-.slider{
-    height:30vh;
-    position:relative;
-    margin-top:20px;
+.js-img-slider {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    margin: 0;
 }
 
-.slider img{
-     width:100%;
-     height:auto;
-     position:absolute;
-     top:0;
-     opacity:0;
-     transition:opacity 5s ;
-}
-
-img.active{
-    opacity:1;
+.js-img-slider.active {
+    opacity: 1;
 }
 
 
@@ -275,7 +298,7 @@ img.active{
     text-transform: uppercase;
     color: #473c38;
     text-decoration: none;
-    margin:10px;
+    margin: 10px;
 }
 
 .itinerary_section h2 a:hover {
@@ -293,20 +316,23 @@ img.active{
     margin: 10px;
     text-align: center;
     text-decoration: none;
-    padding-bottom:15px;
+    padding-bottom: 15px;
 }
 
 .itinerary_info {
     margin-top: 20px;
 }
 
-.itinerary_info a, .update_btn, .delete_btn, #add_btn, #admin_comment_btn, #admin_user_btn{
+.itinerary_info a,
+#add_btn,
+#admin_comment_btn,
+#admin_user_btn {
     background-color: #473c38;
     padding: 7px;
     color: #f6f4f3;
     border-radius: 5%;
-    text-align:center;
-    text-decoration:none;
+    text-align: center;
+    text-decoration: none;
 }
 
 .itinerary_info a:hover {
@@ -315,171 +341,174 @@ img.active{
 
 
 /******** DETAILS ITINERAIRES ********/
-.itinerary_details{
-    width:100%;
+
+.itinerary_details {
+    width: 100%;
 }
 
-.redirection_link{
+.redirection_link {
     color: #473c38;
-    margin:15px;
-    font-weight:bold;
-    font-size:2rem;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .redirection_link:hover {
     color: #86654b;
 }
 
-.itinerary_title_1, h3{
-    text-align:center;
+.itinerary_title_1,
+h3 {
+    text-align: center;
 }
 
-.itinerary_details p{
-    margin:15px ;
-    text-align:justify;
-    padding-bottom:15px;
-}
-.details_plan{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    height:auto;
-    margin-bottom:10px;
+.itinerary_details p {
+    margin: 15px;
+    text-align: justify;
+    padding-bottom: 15px;
 }
 
-.details_plan h3{
-    margin:10px;
+.details_plan {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
-.details_plan iframe{
-    width:90%;
-    height:auto;
-    margin:15px auto;
+.details_plan h3 {
+    margin: 10px;
+}
+
+.details_plan iframe {
+    width: 90%;
+    height: auto;
+    margin: 15px auto;
 }
 
 
 /******** LOGIN ********/
 
-.login_form{
-    margin:50px auto;
-    width:80%;
-    height:auto;
-    border:1px solid #473c38;
-    border-radius:5%;
+.login_form {
+    margin: 50px auto;
+    width: 80%;
+    height: auto;
+    border: 1px solid #473c38;
+    border-radius: 5%;
 }
 
 .login_form h2 {
-  text-align: center;
-  color: #473c38;
-  text-decoration:underline;
-  margin-bottom:15px;
+    text-align: center;
+    color: #473c38;
+    text-decoration: underline;
+    margin-bottom: 15px;
 }
 
-.login_form div{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.login_form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.comment_form{
-    width:100%;
-    background-color:#f6f4f3;
-    margin:50px;
+.comment_form {
+    width: 100%;
+    background-color: #f6f4f3;
+    margin: 50px;
 }
 
 .login_form label {
-  display: block;
-  margin: 10px;
-  color: #473c38;
+    display: block;
+    margin: 10px;
+    color: #473c38;
 }
 
 .login_form input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 
 }
 
 .login_btn {
-  width: 90%;
-  padding: 10px;
-  background-color: #473c38;
-  color: #f6f4f3;
-  font-weight:bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 20px 10px auto;
+    width: 90%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 10px auto;
 }
 
-.login_creation a{
-    margin:10px;
-    color:#473c38;
-    padding:10px;
+.login_creation a {
+    margin: 10px;
+    color: #473c38;
+    padding: 10px;
 }
 
 /******** CREATION DE COMPTE ********/
 
-
 .registration_section {
-  text-align: center;
-  background-color: #f6f4f3;
-  border: 2px solid #473c38;
-  padding: 20px;
-  width: 70%;
-  margin: 50px auto;
-  border-radius:5%;
+    text-align: center;
+    background-color: #f6f4f3;
+    border: 2px solid #473c38;
+    padding: 20px;
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 5%;
 }
 
 .registration_section h2 {
-  padding-top: 10px;
-  text-align: center;
-  color: #473c38;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-decoration:underline;
+    padding-top: 10px;
+    text-align: center;
+    color: #473c38;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
 }
 
 .registration_form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .registration_form label {
-  width:50%;
-  margin-bottom: 20px;
-  color: #473c38;
-  font-size: 1.5rem;
+    width: 50%;
+    margin-bottom: 20px;
+    color: #473c38;
+    font-size: 1.5rem;
 }
 
 .registration_form input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius:5%;
-  margin:10px;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    margin: 10px;
 }
 
-.registration_btn{
-  width: 90%;
-  padding: 10px;
-  background-color: #473c38;
-  color: #f6f4f3;
-  font-weight: bold;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  margin: 20px 10px auto;
+.registration_btn {
+    width: 90%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px 10px auto;
 }
 
 .registration_btn:hover {
-  background-color: #604e4a;
+    background-color: #604e4a;
 }
 
-/******** POP-UP ********/
- .popup{
+        /******** POP-UP ********/
+
+.popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -487,65 +516,105 @@ img.active{
     transform: translate(-50%, -50%);
     background: white;
     padding: 25px;
-    background-color:#cbbfb4;
+    background-color: #cbbfb4;
     border: 1px solid #31241e;
+    width:60%;
 }
 
-.popup h2{
-    text-align:center;
-}
-
-newsletter_box {
-    margin-bottom:10px;
-}
-
-#btn_close{
-    position:absolute;
-    top:-10px;
-    right:-10px;
-    text-decoration:none;
-    padding:5px;
-    background-color:#31241e;
+.popup h2 {
+    text-align: center;
     color:#f6f4f3;
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+.popup_form{
+    margin:auto;
+}
+
+.popup label{
+    color:#f6f4f3;
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+.newsletter_box{
+    margin-top:10px;
+    display:flex;
+}
+
+.newsletter_box input{
+    padding:10px;
+    margin-left:15px;
+     border: 2px solid #473c38;
+     width:70%;
+}
+.send_btn{
+    display:flex;
+    justify-content: flex-end;
+}
+.send_btn button{
+    width: 40%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px 10px auto;
+}
+
+#btn_close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-decoration: none;
+    padding: 7px;
+    background-color: #31241e;
+    color: #f6f4f3;
+    font-weight:bold;
 }
 
 
 /******** COMMENTAIRES ********/
 
-.comment_page::before, .admin_comment::before{
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/image/mer.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  opacity: 0.3;
-  z-index: -1; 
+.comment_page::before,
+.admin_comment::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/image/mer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.3;
+    z-index: -1;
 }
 
-.comment_page, .admin_comment {
-  position: relative;
+.comment_page,
+.admin_comment {
+    position: relative;
 }
 
-.comment_img img{
-    width:100%;
-    height:auto;
-    margin-left:20px;
+.comment_img img {
+    width: 100%;
+    height: auto;
+    margin-left: 20px;
 }
 
-.comment_page h2{
-    padding-top:10px;
-    text-align:center;
+.comment_page h2 {
+    padding-top: 10px;
+    text-align: center;
 }
-.comment_intro p{
-    margin:10px;
-    padding:10px;
-    text-align:justify;
+
+.comment_intro p {
+    margin: 10px;
+    padding: 10px;
+    text-align: justify;
 }
 
 .comment_form {
@@ -567,14 +636,14 @@ newsletter_box {
     margin: 5px;
     font-weight: bold;
     color: #473c38;
-    font-size:2rem;
+    font-size: 2rem;
 }
 
 .comment_form label {
     display: block;
     margin: 10px;
     color: #473c38;
-    font-size:2rem;
+    font-size: 2rem;
 }
 
 .comment_form textarea {
@@ -602,15 +671,15 @@ newsletter_box {
     padding: 10px;
 }
 
-#comment_login{
-    margin:0;
-    padding:0;
-    text-align:center;
+#comment_login {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.comments{
-    max-height:400px;
-    overflow:auto;
+.comments {
+    max-height: 400px;
+    overflow: auto;
 }
 
 .comments ul {
@@ -618,8 +687,9 @@ newsletter_box {
     padding: 0;
 }
 
-.comments li, .admin_comment li{
-    width:80%;
+.comments li,
+.admin_comment li {
+    width: 80%;
     background-color: #f6f4f3;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -632,80 +702,108 @@ newsletter_box {
 }
 
 /******** A PROPOS ********/
-.culture_part_1 h2{
-    text-align:center;
+
+.aPropos_container h2 {
+    text-align: center;
 }
 
-.culture_part_1, .culture_part_2{
+.culture_part_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.culture_part_2{
     display:flex;
-    flex-direction:column;
+    flex-direction:column-reverse;
 }
 
-.culture_part_1 p, .culture_part_2 p{
-    margin:10px;
-    text-align:left;
-    text-align:justify;
+.culture_part_1 p,
+.culture_part_2 p {
+    margin: 20px;
+    text-align: justify;
 }
 
 /******** PARTIE ADMIN ********/
-/******** ITINERAIRE ********/
 
-.admin_itinerary h2,h3{
-    text-align:center;
+        /******** ITINERAIRE ********/
+
+.admin_itinerary h2,
+h3 {
+    text-align: center;
 }
 
-.admin_img_container{
-    width:80%;
-    height:auto;
-    display:flex;
-    margin:auto;
+.admin_img_container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin: auto;
 }
 
-.admin_img_container img{
-    width:100%;
-    height:auto;
+.admin_img_container img {
+    width: 100%;
+    height: auto;
 }
 
-.admin_itinerary_section{
-    display:flex;
-    flex-direction:column;
+.admin_itinerary_section {
+    display: flex;
+    flex-direction: column;
 }
 
 .action_buttons {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
-.action_buttons button{
-    width:40%;
-    margin:20px 10px;
+.update_btn,
+.delete_btn {
+    width: 60%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px 10px auto;
 }
 
-#add_btn{
-    padding:15px;
+.update_btn:hover,
+.delete_btn:hover {
+    background-color: #604e4a;
 }
 
-/******** COMMENTAIRES ********/
-.admin_comment h2{
-    text-align:center;
+.update_btn {
+    text-decoration: none;
+    font-size: 1.4rem;
+    text-align: center;
 }
 
-#admin_comment_btn{
-    text-align:center;
-    align-items:center;
-    width:60%;
-    margin:10px;
+#add_btn {
+    padding: 15px;
 }
 
-/******** USER ********/
+        /******** COMMENTAIRES ********/
 
-.admin_user h2{
-    text-align:center;
+.admin_comment h2 {
+    text-align: center;
 }
 
-.admin_user li{
-    width:80%;
+#admin_comment_btn {
+    text-align: center;
+    align-items: center;
+    width: 60%;
+    margin: 10px;
+}
+
+        /******** USER ********/
+
+.admin_user h2 {
+    text-align: center;
+}
+
+.admin_user li {
+    width: 80%;
     background-color: #cbbfb4;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -713,104 +811,233 @@ newsletter_box {
     padding: 10px;
 }
 
-.admin_user a{
-    text-decoration:none;
-    color:#f6f4f3;
-    font-weight:bold;
+.admin_user a {
+    text-decoration: none;
+    color: #f6f4f3;
+    font-weight: bold;
 }
 
 
-#admin_user_btn{
-    text-align:center;
-    align-items:center;
-    width:60%;
-    margin:10px 0;
+#admin_user_btn {
+    text-align: center;
+    align-items: center;
+    width: 60%;
+    margin: 10px 0;
 }
 
-/******** AJOUT ITINERAIRES ********/
+        /******** AJOUT ITINERAIRES ********/
 
 .addItineraireForm {
-  text-align: center;
-  background-color: #f6f4f3;
-  padding: 20px;
-  width: 90%;
-  margin:auto;
+    text-align: center;
+    background-color: #f6f4f3;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
 }
 
-.addItineraireForm h2{
-    text-decoration:underline;
+.addItineraireForm h2 {
+    text-decoration: underline;
 }
 
 .addItineraireForm label {
-  width: 50%;
-  margin-bottom: 20px;
-  color: #473c38;
-  font-size: 1.5rem;
+    width: 50%;
+    margin-bottom: 20px;
+    color: #473c38;
+    font-size: 1.5rem;
 }
 
-.addItineraireForm input,.addItineraireForm textarea {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5%;
-  margin: 10px;
+.addItineraireForm input,
+.addItineraireForm textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    margin: 10px;
 }
 
 .add_btn {
-  width: 90%;
-  padding: 10px;
-  background-color: #473c38;
-  color: #f6f4f3;
-  font-weight: bold;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  margin: 20px 10px auto;
+    width: 90%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px 10px auto;
 }
 
 .add_btn:hover {
-  background-color: #604e4a;
+    background-color: #604e4a;
 }
 
-/******** UPDATE ITINERAIRES ********/
+        /******** UPDATE ITINERAIRES ********/
+
 .updateItineraireForm {
-  text-align: center;
-  background-color: #f6f4f3;
-  padding: 10px;
-  width: 90%;
-  margin:auto;
+    text-align: center;
+    background-color: #f6f4f3;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
 }
 
-.updateItineraireForm h2{
-    text-decoration:underline;
+.updateItineraireForm h2 {
+    text-decoration: underline;
 }
 
 .updateItineraireForm label {
-  width: 50%;
-  margin-bottom: 20px;
-  color: #473c38;
-  font-size: 1.5rem;
+    width: 50%;
+    margin-bottom: 20px;
+    color: #473c38;
+    font-size: 1.5rem;
 }
 
-.updateItineraireForm input, .updateItineraireForm textarea {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 10px;
+.updateItineraireForm input,
+.updateItineraireForm textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
 }
 
-.update_btn, .delete_btn {
-  width: 90%;
-  padding: 10px;
-  background-color: #473c38;
-  color: #f6f4f3;
-  font-weight: bold;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  margin: 20px 10px auto;
-}
+@media screen and (min-width: 1100px) {
 
-.update_btn:hover, .delete_btn:hover {
-  background-color: #604e4a;
+    /******** HEADER ********/
+            /******** MENU BANDEAU ********/
+    .nav_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d1c8c1;
+        padding: 10px;
+    }
+
+    .header_logo {
+        display: flex;
+        flex-direction: block;
+    }
+
+    h1 a {
+        color: #473c38;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        font-size: 2rem;
+        margin: 0;
+        background-color: #cbbfb4;
+        left: 0;
+        padding: 15px;
+    }
+
+    nav li a {
+        color: #473c38;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    nav li a:hover {
+        background-color: #cbbfb4;
+    }
+
+    #icons {
+        display: none;
+    }
+
+
+    /******** HOME ********/
+            /******** SLIDER ********/
+    .slider img {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+    }
+
+    .slider {
+        margin-bottom: 60vh;
+    }
+
+    .figures h2 {
+        font-size: 3rem;
+    }
+
+    .figures h3 {
+        font-size: 2rem;
+    }
+            /******** FIGURES ********/
+    .home_figure_container {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .home_figure {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /******** LOGIN ********/
+    .login_form {
+        width: 30%;
+    }
+
+    /******** LISTE ITINERAIRES ********/
+    .list_container {
+        display: grid;
+        grid-template-columns: 40% 40% 40%;
+        gap: 20px;
+        justify-content: center;
+        margin: 30px auto;
+    }
+
+    .itinerary_info a {
+        padding: 10px;
+        font-size: 2rem;
+    }
+    /******** DETAIL ITINERAIRES ********/
+    .itinerary_container_1 {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        margin: 50px;
+    }
+
+    .itinerary_container_1 p {
+        font-size: 1.5rem;
+    }
+
+    .itinerary_container_2 {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        margin: 40px;
+    }
+
+    .details_plan {
+        width: 70%;
+        margin: auto;
+    }
+            /******** POPUP ********/
+            .popup{
+                width:25%;
+            }
+    /******** A PROPOS ********/        
+    .culture_part_1, .culture_part_2{
+        display: grid;
+        grid-template-columns: 40% 50%;
+        margin: 40px;
+        align-items:center;
+    }
+    
+    .culture_part_1 p,
+.culture_part_2 p {
+    margin-left: 10px;
+    text-align: justify;
+}
 }

@@ -4,6 +4,7 @@
             <%= itineraire.titre_1 %>
         </h2>
         </div>
+        <section class="itinerary_container_1">
         <section class="details_img_1">
             <img src="/image/<%= itineraire.image_1 %>" alt="Photo de <%= itineraire.image_1 %>">
         </section>
@@ -19,6 +20,8 @@
         <section class="details_img_2">
             <img src="/image/<%= itineraire.image_2 %>" alt="Photo de <%= itineraire.image_2 %>">
         </section>    
+        </section>
+        <section class="itinerary_container_2">
         <section "details_part_2">
             <h3>
                 <%= itineraire.titre_3%>
@@ -39,6 +42,7 @@
                 <%= itineraire.texte_3 %>
             </p>
             </section>
+            </section>
         <section class="details_plan">
             <h3>ITINERAIRE SUR PLAN</h3>
             <iframe src="<%= itineraire.plan %>"></iframe>
@@ -50,23 +54,24 @@
             <section>
 
         <div class="popup" id="popup">
-        <div id="popup_container">
+        <!--<div id="popup_container">-->
             <h2>Newsletter</h2>
-            <form method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
+            <form class="popup_form" method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
     <div>
-        <label class="newsletter_box" for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
-        <input type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
+        <label for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
+        <input id="itineraire" type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
     </div>
 
     <div class="newsletter_box">
         <label for="email">Email</label>
         <input id="email" type="email" name="email" />
     </div>
-
+    <div class="send_btn">
     <button type="submit">Envoyer</button>
+    </div>
     <a href="javascript:void(0)" id="btn_close">Fermer</a>
 </form>
-        </div>
+        <!--</div>-->
         </div>
     </section>     
     </main>
