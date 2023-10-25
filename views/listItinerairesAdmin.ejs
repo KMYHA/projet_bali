@@ -1,8 +1,11 @@
 <%- include('headerAdmin') -%>
 <section class="admin_itinerary">
         <h2>ITINERAIRES</h2>
+        <div class="add_btn_container"> 
+        <a id="add_btn" href="/itineraire/add">Ajouter un itinéraire</a>
+        </div>
         <div class="admin_itinerary_section">
-            <a id="add_btn" href="/itineraire/add">Ajouter un itinéraire</a>
+            
             <% for(const itineraire of itineraires) { %>
                 <div class="itineraire">
                     <ul>

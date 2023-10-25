@@ -47,7 +47,7 @@ main {
 
 /******** HEADER ********/
 
-        /******** NAVBAR ********/
+/******** NAVBAR ********/
 
 .nav_header {
     display: flex;
@@ -76,7 +76,7 @@ nav a:hover {
 }
 
 
-        /******** MENU BURGER ********/
+/******** MENU BURGER ********/
 
 h1 a {
     color: #473c38;
@@ -148,7 +148,7 @@ nav li a {
 }
 
 
-        /******** FOOTER ********/
+/******** FOOTER ********/
 
 footer {
     background-color: #cbbfb4;
@@ -257,7 +257,7 @@ home {
     text-align: justify;
 }
 
-        /******** SLIDER ********/
+/******** SLIDER ********/
 
 .slider {
     width: 100%;
@@ -324,7 +324,6 @@ home {
 }
 
 .itinerary_info a,
-#add_btn,
 #admin_comment_btn,
 #admin_user_btn {
     background-color: #473c38;
@@ -339,6 +338,16 @@ home {
     background-color: #86654b;
 }
 
+.opacity {
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.opacity:hover {
+    opacity: .5;
+}
+
 
 /******** DETAILS ITINERAIRES ********/
 
@@ -347,13 +356,18 @@ home {
 }
 
 .redirection_link {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.redirection_link a {
     color: #473c38;
     margin: 15px;
     font-weight: bold;
     font-size: 2rem;
 }
 
-.redirection_link:hover {
+.redirection_link a:hover {
     color: #86654b;
 }
 
@@ -430,8 +444,9 @@ h3 {
 
 }
 
-.login_btn {
-    width: 90%;
+.login_btn,
+.registration_btn {
+    width: 80%;
     padding: 10px;
     background-color: #473c38;
     color: #f6f4f3;
@@ -473,6 +488,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .registration_form label {
@@ -483,30 +499,23 @@ h3 {
 }
 
 .registration_form input {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5%;
     margin: 10px;
 }
 
-.registration_btn {
-    width: 90%;
-    padding: 10px;
-    background-color: #473c38;
-    color: #f6f4f3;
-    font-weight: bold;
-    border: none;
-    border-radius: 5%;
-    cursor: pointer;
-    margin: 20px 10px auto;
+.registration_btn_container {
+    width: 100%;
 }
 
-.registration_btn:hover {
+.registration_btn:hover,
+.login_btn:hover {
     background-color: #604e4a;
 }
 
-        /******** POP-UP ********/
+/******** POP-UP ********/
 
 .popup {
     display: none;
@@ -518,41 +527,44 @@ h3 {
     padding: 25px;
     background-color: #cbbfb4;
     border: 1px solid #31241e;
-    width:60%;
+    width: 60%;
 }
 
 .popup h2 {
     text-align: center;
-    color:#f6f4f3;
-    font-size:2.5rem;
-    margin-bottom:20px;
-}
-.popup_form{
-    margin:auto;
+    color: #f6f4f3;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.popup label{
-    color:#f6f4f3;
-    font-weight:bold;
-    font-size:1.5rem;
+.popup_form {
+    margin: auto;
 }
 
-.newsletter_box{
-    margin-top:10px;
-    display:flex;
+.popup label {
+    color: #f6f4f3;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-.newsletter_box input{
-    padding:10px;
-    margin-left:15px;
-     border: 2px solid #473c38;
-     width:70%;
+.newsletter_box {
+    margin-top: 10px;
+    display: flex;
 }
-.send_btn{
-    display:flex;
+
+.newsletter_box input {
+    padding: 10px;
+    margin-left: 15px;
+    border: 2px solid #473c38;
+    width: 70%;
+}
+
+.send_btn {
+    display: flex;
     justify-content: flex-end;
 }
-.send_btn button{
+
+.send_btn button {
     width: 40%;
     padding: 10px;
     background-color: #473c38;
@@ -572,7 +584,7 @@ h3 {
     padding: 7px;
     background-color: #31241e;
     color: #f6f4f3;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 
@@ -636,12 +648,12 @@ h3 {
     margin: 5px;
     font-weight: bold;
     color: #473c38;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .comment_form label {
     display: block;
-    margin: 10px;
+    margin: 20px;
     color: #473c38;
     font-size: 2rem;
 }
@@ -712,9 +724,9 @@ h3 {
     flex-direction: column;
 }
 
-.culture_part_2{
-    display:flex;
-    flex-direction:column-reverse;
+.culture_part_2 {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .culture_part_1 p,
@@ -725,7 +737,7 @@ h3 {
 
 /******** PARTIE ADMIN ********/
 
-        /******** ITINERAIRE ********/
+/******** ITINERAIRE ********/
 
 .admin_itinerary h2,
 h3 {
@@ -747,6 +759,7 @@ h3 {
 .admin_itinerary_section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .action_buttons {
@@ -766,44 +779,76 @@ h3 {
     border-radius: 5%;
     cursor: pointer;
     margin: 20px 10px auto;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-align: center;
 }
 
 .update_btn:hover,
-.delete_btn:hover {
+.delete_btn:hover,
+.comment_btn:hover,
+.update_itinerary_btn:hover,
+.add_btn:hover {
     background-color: #604e4a;
 }
 
-.update_btn {
-    text-decoration: none;
-    font-size: 1.4rem;
+.add_btn_container {
+    width: 100%;
+    background-color: #473c38;
+    padding: 15px;
     text-align: center;
 }
 
 #add_btn {
-    padding: 15px;
+    color: #f6f4f3;
+    border-radius: 5%;
+    text-decoration: none;
+
 }
 
-        /******** COMMENTAIRES ********/
+/******** COMMENTAIRES ********/
+
+.admin_comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.admin_comment ul {
+    width: 90%;
+}
 
 .admin_comment h2 {
     text-align: center;
 }
+
 
 #admin_comment_btn {
     text-align: center;
     align-items: center;
     width: 60%;
     margin: 10px;
+    font-weight: bold;
 }
 
-        /******** USER ********/
+/******** USER ********/
+
+.admin_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
 .admin_user h2 {
     text-align: center;
 }
 
-.admin_user li {
-    width: 80%;
+.admin_user ul {
+    width: 90%;
     background-color: #cbbfb4;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -822,15 +867,27 @@ h3 {
     text-align: center;
     align-items: center;
     width: 60%;
-    margin: 10px 0;
+    margin: 10px;
+    font-weight: bold;
+    ;
 }
 
-        /******** AJOUT ITINERAIRES ********/
+/******** AJOUT ITINERAIRES ********/
 
-.addItineraireForm {
+.add_form_container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add_form_container h2 {
+    text-decoration: underline;
+}
+
+.add_area {
+    display: block;
     text-align: center;
     background-color: #f6f4f3;
-    padding: 20px;
+    padding: 15px;
     width: 90%;
     margin: auto;
 }
@@ -840,8 +897,8 @@ h3 {
 }
 
 .addItineraireForm label {
-    width: 50%;
-    margin-bottom: 20px;
+    display: block;
+    width: 100%;
     color: #473c38;
     font-size: 1.5rem;
 }
@@ -856,38 +913,36 @@ h3 {
 }
 
 .add_btn {
-    width: 90%;
-    padding: 10px;
+    width: 80%;
+    padding: 15px;
     background-color: #473c38;
     color: #f6f4f3;
     font-weight: bold;
     border: none;
     border-radius: 5%;
     cursor: pointer;
-    margin: 20px 10px auto;
+    margin: auto;
 }
 
-.add_btn:hover {
-    background-color: #604e4a;
+/******** UPDATE ITINERAIRES ********/
+
+.update_form_container {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-        /******** UPDATE ITINERAIRES ********/
-
-.updateItineraireForm {
+.update_area {
+    display: block;
     text-align: center;
     background-color: #f6f4f3;
-    padding: 10px;
+    padding: 15px;
     width: 90%;
     margin: auto;
 }
 
-.updateItineraireForm h2 {
-    text-decoration: underline;
-}
-
 .updateItineraireForm label {
-    width: 50%;
-    margin-bottom: 20px;
+    display: block;
+    width: 100%;
     color: #473c38;
     font-size: 1.5rem;
 }
@@ -897,13 +952,68 @@ h3 {
     width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
+    border-radius: 5%;
     margin: 10px;
 }
 
-@media screen and (min-width: 1100px) {
+.updateItineraireForm h2 {
+    text-decoration: underline;
+}
+
+.update_itinerary_btn {
+    width: 80%;
+    padding: 10px;
+    background-color: #473c38;
+    color: #f6f4f3;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    margin: 20px 10px auto;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+/******** MENTIONS LEGALES ********/
+
+.legal_mention h1 {
+    text-align: center;
+}
+
+.legal_mention p {
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/******** PAGE 404 ********/
+
+.error_page {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.error_page h1 {
+    font-size: 4rem;
+    color: #333;
+    margin: 0;
+}
+
+.error_page p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 960px) {
 
     /******** HEADER ********/
-            /******** MENU BANDEAU ********/
+    /******** MENU BANDEAU ********/
     .nav_header {
         display: flex;
         justify-content: center;
@@ -922,18 +1032,28 @@ h3 {
         font-size: 2.5rem;
         text-align: center;
     }
+    @keyframes slideIn {
+        from {
+            left: -100%;
+        }
+        to {
+            left: 0;
+        }
+    }
 
     nav ul {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        position: relative;
         width: 100%;
         font-size: 2rem;
         margin: 0;
         background-color: #cbbfb4;
         left: 0;
         padding: 15px;
+        animation: slideIn 1.2s;
     }
 
     nav li a {
@@ -951,8 +1071,10 @@ h3 {
     }
 
 
+
+
     /******** HOME ********/
-            /******** SLIDER ********/
+    /******** SLIDER ********/
     .slider img {
         width: 100%;
         height: 60vh;
@@ -970,7 +1092,7 @@ h3 {
     .figures h3 {
         font-size: 2rem;
     }
-            /******** FIGURES ********/
+    /******** FIGURES ********/
     .home_figure_container {
         display: grid;
         grid-template-columns: 40% 40%;
@@ -979,9 +1101,28 @@ h3 {
     }
 
     .home_figure {
+        position: relative;
+        overflow: hidden;
         border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
+        margin: 10px auto;
+        min-width: 255px;
+        max-width: 315px;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .home_figure img {
+        max-width: 100%;
+        vertical-align: top;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1);
+    }
+
+    .home_figure:hover {
+        transform: scale(1.1);
     }
 
     /******** LOGIN ********/
@@ -992,7 +1133,7 @@ h3 {
     /******** LISTE ITINERAIRES ********/
     .list_container {
         display: grid;
-        grid-template-columns: 40% 40% 40%;
+        grid-template-columns: 50% 50% 50%;
         gap: 20px;
         justify-content: center;
         margin: 30px auto;
@@ -1023,21 +1164,109 @@ h3 {
         width: 70%;
         margin: auto;
     }
-            /******** POPUP ********/
-            .popup{
-                width:25%;
-            }
-    /******** A PROPOS ********/        
-    .culture_part_1, .culture_part_2{
-        display: grid;
-        grid-template-columns: 40% 50%;
-        margin: 40px;
-        align-items:center;
+
+
+    .redirection_link {
+        margin: 60px auto;
     }
-    
+
+    .redirection_link a {
+        font-size: 2.5rem;
+    }
+    /******** POPUP ********/
+    .popup {
+        width: 25%;
+    }
+    /******** A PROPOS ********/
+    .culture_part_1,
+    .culture_part_2 {
+        display: grid;
+        grid-template-columns: 50% 40%;
+        gap: 50px;
+        align-items: center;
+        margin: 50px;
+    }
+
     .culture_part_1 p,
-.culture_part_2 p {
-    margin-left: 10px;
-    text-align: justify;
-}
+    .culture_part_2 p {
+        margin-left: 10px;
+        text-align: justify;
+    }
+
+    /******** COMMENTAIRES ********/
+    .comment_intro p {
+        text-align: center;
+    }
+
+    .comment_form {
+        width: 50%;
+    }
+
+    /******** CREATION COMPTE ********/
+    .registration_section {
+        width: 30%;
+    }
+
+    /******** PARTIE ADMIN ********/
+    /******** ITINERAIRE ********/
+    .admin_itinerary_section {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 20px;
+        justify-content: space-between;
+        margin: 30px auto;
+    }
+
+    /******** ADD ITINERAIRE ********/
+    .add_form_container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /******** COMMENTS ********/
+    .admin_comment {
+        margin: 0 auto;
+        ;
+    }
+
+    .admin_comment ul {
+        width: 60%;
+    }
+
+    .action_buttons {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #admin_comment_btn {
+        width: 30%;
+        padding: 15px;
+    }
+
+    /******** ADMIN USER ********/
+    .admin_user {
+        margin: 0 auto;
+        ;
+    }
+
+    .admin_user ul {
+        width: 60%;
+    }
+
+
+    #admin_user_btn {
+        width: 30%;
+        padding: 15px;
+    }
+
+    /******** FOOTER ********/
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_contact,
+    .social_network {
+        margin: auto 50px;
+    }
 }

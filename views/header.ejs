@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Bali Travelers</title>
+    <meta name="description" content="Découvre des itinéraires de voyages à Bali adaptés à la durée que tu souhaites. Prépare ton voyage et partage tes expériences avec les autres voyageurs de Bali">
+
     <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,13 +29,13 @@
             <nav id="nav">
                 <div class="nav_header">
                     <div class="header_logo">
-                        <a  href="/"><img src="/image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali"></a>
+                        <a  href="/home"><img src="/image/Logo_bali.png" alt="logo du site représentant le temple Tanah Lot à Bali"></a>
                     </div>
-                    <h1><a href="/">Bali Travelers</a></h1>
+                    <h1><a href="/home">Bali Travelers</a></h1>
                     <div id='icons'></div>
                 </div>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <% if (locals.isLogged) { %>
                     <li><a href="/logout">Logout</a></li>
                     <% } else { %>

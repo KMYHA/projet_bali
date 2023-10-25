@@ -20,6 +20,8 @@ import adminUser from './controllers/adminUser.js';
 import detailsUser from './controllers/detailsUser.js';
 import {addNewsletter,addNewsletterSubmit} from './controllers/createNewsletter.js'
 import logout from './controllers/logout.js';
+import legal from'./controllers/legal.js';
+
 
 const checkAuthentification = (req, res, next) => {
     if (!req.session.isAdmin) {
@@ -58,7 +60,7 @@ router.use((req, res, next) => {
     });
 });
 
-router.get('/', homeController);
+router.get('/home', homeController);
 router.get('/itineraires', listItineraire);
 router.get('/itineraire/add', checkAuthentification, addItineraire);
 router.post('/itineraire/add', checkAuthentification, addItineraireSubmit);
@@ -82,6 +84,7 @@ router.post('/login', login);
 router.get('/logout', logout);
 router.get('/user/:id', detailsUser);
 router.get('/user/:id/delete', checkAuthentification, deleteUser);
+router.get('/legal',legal)
 
 
 export default router;
