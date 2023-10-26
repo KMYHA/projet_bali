@@ -60,7 +60,7 @@ router.use((req, res, next) => {
     });
 });
 
-router.get('/home', homeController);
+router.get('/', homeController);
 router.get('/itineraires', listItineraire);
 router.get('/itineraire/add', checkAuthentification, addItineraire);
 router.post('/itineraire/add', checkAuthentification, addItineraireSubmit);
@@ -86,5 +86,8 @@ router.get('/user/:id', detailsUser);
 router.get('/user/:id/delete', checkAuthentification, deleteUser);
 router.get('/legal',legal)
 
+// router.use((req, res, next) => {
+//     res.status(404).render('error404.ejs');
+// });
 
 export default router;

@@ -1,9 +1,5 @@
 <%- include('header') -%>
         <section class="comment_page">
-<!--                     <div class="comment_img">   -->
-<!--  <img src="/image/mer.jpg" alt="photo de la mer">-->
-<!--</div>-->
-            
         <h2>COMMENTAIRES</h2>
             <div class="comment_intro">
                 <p>N'hésite pas à nous laisser un commentaire, une expérience ou autre sur les différents itinéraires ou sur ton propre itinéraire à Bali !</p>
@@ -11,7 +7,6 @@
             </div>
 
         
-        <section>
             <form method="post" class="comment_form">
                 <div class="form-group">
                    <p>Bienvenue </p>
@@ -26,11 +21,11 @@
                     <button class="comment_btn" type="submit">Envoyer</button>
                 </div>
             </form>
-        </section>
-        <section class="comments">
+            
+        <div class="comments">
          <% for (commentaire of commentaires) { %>
-      <ul>
-        <li>
+      <article class="list_comment">
+          <h3>Commentaire d'un voyageur</h3>
             <p>
                 <b>
             <%= commentaire.pseudo %> : 
@@ -42,10 +37,9 @@
             <p>
             <%= commentaire.message %>
             </p>
-        </li>
-      </ul>
+        </article>
     <% } %>
-        </section>
+        </div>
         </section>
     </main>
 <%- include('footer') -%>

@@ -3,11 +3,10 @@
         <h2  class="itinerary_title_1">
             <%= itineraire.titre_1 %>
         </h2>
-        </div>
-        <section class="itinerary_container_1">
-        <section class="details_img_1">
+        <div class="itinerary_container_1">
+        <figure class="details_img_1">
             <img src="/image/<%= itineraire.image_1 %>" alt="Photo de <%= itineraire.image_1 %>">
-        </section>
+        </figure>
         <section class="details_part_1">
             <h3>
                 <%= itineraire.titre_2%>
@@ -17,12 +16,12 @@
             </p>
             </section>
             
-        <section class="details_img_2">
+        <figure class="details_img_2">
             <img src="/image/<%= itineraire.image_2 %>" alt="Photo de <%= itineraire.image_2 %>">
-        </section>    
-        </section>
-        <section class="itinerary_container_2">
-        <section "details_part_2">
+        </figure>    
+        </div>
+        <div class="itinerary_container_2">
+        <section class="details_part_2">
             <h3>
                 <%= itineraire.titre_3%>
             </h3>
@@ -31,9 +30,9 @@
             </p>
             </section>
       
-        <section class="details_img_3">
+        <figure class="details_img_3">
             <img src="/image/<%= itineraire.image_3 %>" alt="Photo de <%= itineraire.image_3 %>">
-        </section>
+        </figure>
         <section class="details_part_3">
             <h3>
                 <%= itineraire.titre_4%>
@@ -42,7 +41,7 @@
                 <%= itineraire.texte_3 %>
             </p>
             </section>
-            </section>
+            </div>
             <div class="redirection_link">
                 <a  href="/itineraires">Revenir à la liste des itinéraires</a>
             </div>
@@ -62,20 +61,19 @@
             <h2>Newsletter</h2>
             <form class="popup_form" method="post" action="/itineraire/<%=itineraire.id%>/newsletter">
     <div>
-        <label for="itineraire">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
+        <label for="email">Souhaites-tu t'inscrire à la Newsletter pour cet itinéraire ?</label>
         <input id="itineraire" type="hidden" name="id_itineraire" value="<%=itineraire.id%>">
     </div>
 
     <div class="newsletter_box">
         <label for="email">Email</label>
-        <input id="email" type="email" name="email" />
+        <input id="email" type="email" name="email">
     </div>
     <div class="send_btn">
     <button type="submit">Envoyer</button>
     </div>
     <a href="javascript:void(0)" id="btn_close">Fermer</a>
 </form>
-        <!--</div>-->
         </div>
     </section>     
     </main>

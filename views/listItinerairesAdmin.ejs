@@ -8,16 +8,14 @@
             
             <% for(const itineraire of itineraires) { %>
                 <div class="itineraire">
-                    <ul>
-                        <li>
+                    <article>
                             <h3>
                                     <%= itineraire.titre_1 %>
                             </h3>
                             <div class="admin_img_container">
-                            <img src="/image/<%= itineraire.image_1 %>" alt="photo de <%=itineraire.image_1 %>"/></a>
+                            <img src="/image/<%= itineraire.image_1 %>" alt="photo de <%=itineraire.image_1 %>">
                             </div>
-                        </li>
-                    </ul>
+                        </article>
                     <div class="action_buttons">
                         <a class="update_btn" href="/itineraire/<%= itineraire.id %>/update">Modifier l'itinéraire</a>
                         <button class="delete_btn" data-itineraireid="<%= itineraire.id %>" >Supprimer l'itinéraire</button>

@@ -2,16 +2,14 @@
 <section class="admin_comment">
     <h2>COMMENTAIRES</h2>
         <% for(const Commentaire of Commentaires) { %>
-            <ul>
-                <li>
+            <article class="list_comment">
                     <p>
                         <%= Commentaire.pseudo %>
                     </p>
                       <p>
                         <%= Commentaire.message %>
                     </p>
-                </li>
-            </ul>
+               </article>
             <div class="action_buttons">
             <a id="admin_comment_btn" href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
             </div>
