@@ -1,5 +1,5 @@
 <%- include('headerAdmin') -%>
-<section class="update_form_container">
+    <section class="update_form_container">
         <form class="updateItineraireForm" method="POST" action="/itineraire/<%= itineraire.id %>/update">
             <h2>Modification de l'itinéraire</h2>
             <div class="update_area">
@@ -12,7 +12,7 @@
             </div>
             <div class="update_area">
                 <label for="texte_1">Texte 1</label>
-                <textarea type="text" name="texte_1" id="texte_1" value=""  rows="10" cols="33" />
+                <textarea name="texte_1" id="texte_1" rows="10" cols="33">
                 <%= itineraire.texte_1 %>
                     </textarea>
             </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="update_area">
                 <label for="texte_2">Texte 2</label>
-                <textarea type="text" name="texte_2" id="texte_2" value="" rows="10" cols="33" />
+                <textarea name="texte_2" id="texte_2" rows="10" cols="33">
                 <%= itineraire.texte_2 %>
                     </textarea>
             </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="update_area">
                 <label for="texte_3">Texte 3</label>
-                <textarea type="text" name="texte_3" id="texte_3" value="" rows="10" cols="33" />
+                <textarea name="texte_3" id="texte_3" rows="10" cols="33">
                 <%= itineraire.texte_3 %>
                     </textarea>
             </div>
@@ -40,9 +40,10 @@
                 <label for="plan">Plan</label>
                 <input type="text" name="plan" id="plan" value="<%= itineraire.plan%>">
             </div>
-                <div>
+            <div>
                 <button class="update_itinerary_btn" type="submit">Enregistrer</button>
             </div>
         </form>
-        </section>
+    </section>
+</main>
 <%- include('footer') -%>

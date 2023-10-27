@@ -1,19 +1,20 @@
 <%- include('headerAdmin') -%>
-<section class="admin_comment">
-    <h2>COMMENTAIRES</h2>
+    <section class="admin_comment">
+        <h2>COMMENTAIRES</h2>
         <% for(const Commentaire of Commentaires) { %>
             <article class="list_comment">
-                    <p>
-                        <%= Commentaire.pseudo %>
-                    </p>
-                      <p>
-                        <%= Commentaire.message %>
-                    </p>
-               </article>
+                <h3>Commentaire d'un voyageur:</h3>
+                <p>
+                    <%= Commentaire.pseudo %>
+                </p>
+                <p>
+                    <%= Commentaire.message %>
+                </p>
+            </article>
             <div class="action_buttons">
-            <a id="admin_comment_btn" href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
+                <a class="admin_comment_btn" href="/comment/<%= Commentaire.id %>/delete">Supprimer le commentaire</a>
             </div>
             <% } %>
-</section>
-    </main>
+    </section>
+</main>
 <%- include('footer') -%>

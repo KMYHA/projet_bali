@@ -1,29 +1,29 @@
 <%- include ('header') -%>
-        <section>
-            <form class="login_form" method="post">
-                <h2>Connexion : </h2>
-                <div>
-                    <label for="pseudo">Pseudo</label>
-                    <input id="pseudo" type="text" name="pseudo" placeholder="pseudo">
-                </div>
+    <section>
+        <form class="login_form" method="post">
+            <h2>Connexion : </h2>
+            <div>
+                <label for="pseudo">Pseudo</label>
+                <input id="pseudo" type="text" name="pseudo" placeholder="pseudo">
+            </div>
 
-                <div>
-                    <label for="password">Password</label>
-                    <input id="password" type="password" name="password">
-                </div>
-                <div >
+            <div>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+            </div>
+            <div>
                 <button class="login_btn" type="submit">Enregistrer</button>
-                
+
                 <% if (message) { %>
                     <p>
                         <%= message %>
                     </p>
                     <% } %>
-                </div>
-                <div class="login_creation">
-                    <a href="/addUser"> Créer un compte</a>
             </div>
-            </form>
-        </section>
-    </main>
+            <div class="login_creation">
+                <a href="/addUser"> Créer un compte</a>
+            </div>
+        </form>
+    </section>
+</main>
 <%-include ('footer') -%>

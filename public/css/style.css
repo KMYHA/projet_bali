@@ -152,6 +152,7 @@ nav li a {
 
 footer {
     background-color: #cbbfb4;
+    justify-content: center;
 }
 
 .footer_logo {
@@ -209,7 +210,9 @@ footer {
     font-weight: bold;
     padding: 10px;
 }
-
+.footer_final a{
+    text-decoration:underline;
+}
 /******** HOME ********/
 
 home {
@@ -261,8 +264,8 @@ home {
 
 .slider {
     width: 100%;
-    height:30vh;
-    overflow:hidden;
+    height: 30vh;
+    overflow: hidden;
     position: relative;
 }
 
@@ -280,10 +283,10 @@ home {
     opacity: 1;
 }
 
-.slider img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /******** ITINERAIRES ********/
@@ -330,7 +333,7 @@ home {
 }
 
 .itinerary_info a,
-#admin_comment_btn,
+.admin_comment_btn,
 .admin_user_btn {
     background-color: #473c38;
     padding: 7px;
@@ -402,7 +405,7 @@ h3 {
 
 .details_plan iframe {
     width: 90%;
-    height: auto;
+    height: 40vh;
     margin: 15px auto;
 }
 
@@ -533,7 +536,7 @@ h3 {
     padding: 25px;
     background-color: #cbbfb4;
     border: 1px solid #31241e;
-    border-radius:5%;
+    border-radius: 5%;
     width: 60%;
 }
 
@@ -592,7 +595,7 @@ h3 {
     background-color: #31241e;
     color: #f6f4f3;
     font-weight: bold;
-    border-radius:10%;
+    border-radius: 10%;
 }
 
 
@@ -702,23 +705,20 @@ h3 {
     overflow: auto;
 }
 
-/*.comments ul {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
 
-.list_comment  {
+.list_comment {
     width: 80%;
     background-color: #f6f4f3;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 10px auto;
     padding: 10px;
+    overflow-x: auto;
 }
 
 .comments p {
     margin: 5px 0;
-    width:100%;
+    width: 100%;
 }
 
 /******** A PROPOS ********/
@@ -831,7 +831,7 @@ h3 {
 }
 
 
-#admin_comment_btn {
+.admin_comment_btn {
     text-align: center;
     align-items: center;
     width: 60%;
@@ -1072,10 +1072,9 @@ h3 {
 
     /******** HOME ********/
     /******** SLIDER ********/
-
-.slider {
-    height:60vh;
-}
+    .slider {
+        height: 60vh;
+    }
     .figures h2 {
         font-size: 3rem;
     }
@@ -1122,30 +1121,29 @@ h3 {
     }
 
     /******** LISTE ITINERAIRES ********/
-   
     .list_container {
         display: flex;
-        justify-content:space-between;
-        margin:auto;
-        width:100%;
+        justify-content: space-between;
+        margin: auto;
+        width: 100%;
     }
-    
-    .itinerary{
-        width:30%;
-        margin:auto;
+
+    .itinerary {
+        width: 30%;
+        margin: auto;
     }
 
     .itinerary_info a {
-        display:block;
-        height:60%;
+        display: block;
+        height: 60%;
         font-size: 2rem;
     }
-    
-    .itinerary img{
-        width:100%;
+
+    .itinerary img {
+        width: 100%;
     }
-    
-    
+
+
     /******** DETAIL ITINERAIRES ********/
     .itinerary_container_1 {
         display: grid;
@@ -1160,13 +1158,18 @@ h3 {
     .itinerary_container_2 {
         display: grid;
         grid-template-columns: 30% 30% 30%;
-        gap:30px;
+        gap: 30px;
         margin: 40px;
     }
 
     .details_plan {
-        width: 70%;
+        width: 50%;
         margin: auto;
+    }
+    
+    .details_plan iframe{
+        width:100%;
+        height:40vh;
     }
 
 
@@ -1198,9 +1201,8 @@ h3 {
     }
 
     /******** COMMENTAIRES ********/
-    
-    .comments li{
-        width:60%;
+    .comments li {
+        width: 60%;
     }
     .comment_intro p {
         text-align: center;
@@ -1217,30 +1219,29 @@ h3 {
 
     /******** PARTIE ADMIN ********/
     /******** ITINERAIRE ********/
-    
-     .admin_itinerary_section {
+    .admin_itinerary_section {
         display: flex;
-        flex-direction:row;
-        justify-content:space-between;
-        margin:auto;
-        width:100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        width: 100%;
     }
-    
-    .itineraire{
-        width:30%;
-        margin:auto;
+
+    .itineraire {
+        width: 30%;
+        margin: auto;
     }
 
     .admin_itinerary_section li {
-        display:block;
-        height:60%;
+        display: block;
+        height: 60%;
         font-size: 2rem;
     }
-    
-    .itinerary img{
-        width:100%;
+
+    .itinerary img {
+        width: 100%;
     }
-    
+
 
     /******** ADD ITINERAIRE ********/
     .add_form_container {
@@ -1248,23 +1249,23 @@ h3 {
         align-items: center;
     }
 
-    .addItineraireForm{
-        width:80%;
-        margin:auto;
+    .addItineraireForm {
+        width: 80%;
+        margin: auto;
     }
-    
-    .add_btn{
-        width:60%;
+
+    .add_btn {
+        width: 60%;
     }
-    
+
     /******** UPDATE ITINERAIRE ********/
-     .updateItineraireForm{
-        width:80%;
-        margin:auto;
+    .updateItineraireForm {
+        width: 80%;
+        margin: auto;
     }
-    
-    .update_itinerary_btn{
-        width:60%;
+
+    .update_itinerary_btn {
+        width: 60%;
     }
     /******** COMMENTS ********/
     .admin_comment {
@@ -1280,7 +1281,7 @@ h3 {
         width: 100%;
         margin-bottom: 20px;
     }
-    #admin_comment_btn {
+    .admin_comment_btn {
         width: 30%;
         padding: 15px;
     }
@@ -1288,7 +1289,6 @@ h3 {
     /******** ADMIN USER ********/
     .admin_user {
         margin: 0 auto;
-        ;
     }
 
     .admin_user ul {
@@ -1304,15 +1304,14 @@ h3 {
     /******** FOOTER ********/
     .footer {
         display: flex;
-        justify-content: center;
         align-items: center;
-        width:100%;
-        
+        width: 100%;
+
     }
 
     .footer_contact,
-    .social_network {
-        margin: auto 50px;
-        width:30%;
+    .social_network,
+    .footer_final {
+        width: 30%;
     }
 }

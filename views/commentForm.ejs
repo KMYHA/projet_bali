@@ -1,45 +1,47 @@
 <%- include('header') -%>
-        <section class="comment_page">
+    <section class="comment_page">
         <h2>COMMENTAIRES</h2>
-            <div class="comment_intro">
-                <p>N'hésite pas à nous laisser un commentaire, une expérience ou autre sur les différents itinéraires ou sur ton propre itinéraire à Bali !</p>
-                <p>Cela permettra aux autres voyageurs d'avoir d'autres retours !</p>
-            </div>
+        <div class="comment_intro">
+            <p>N'hésite pas à nous laisser un commentaire, une expérience ou autre sur les différents itinéraires ou sur ton propre itinéraire à Bali !</p>
+            <p>Cela permettra aux autres voyageurs d'avoir d'autres retours !</p>
+        </div>
 
-        
-            <form method="post" class="comment_form">
-                <div class="form-group">
-                   <p>Bienvenue </p>
-                   <p><%=locals.pseudo%></p>
-                </div>
-                <div class="form-group">
-                    <label for="message">Ton commentaire :</label>
-                    <textarea id="message" name="message" rows="5" cols="33" minlength="10" placeholder="Ecris ici ton commentaire" required="required"></textarea>
-                </div>
-                <div class="form-group">
-                    <a id="comment_login" href="/login">Tu dois te connecter pour pouvoir ajouter un commentaire</a>
-                    <button class="comment_btn" type="submit">Envoyer</button>
-                </div>
-            </form>
-            
+
+        <form method="post" class="comment_form">
+            <div class="form-group">
+                <p>Bienvenue </p>
+                <p>
+                    <%=locals.pseudo%>
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="message">Ton commentaire :</label>
+                <textarea id="message" name="message" rows="5" cols="33" minlength="10" placeholder="Ecris ici ton commentaire" required="required"></textarea>
+            </div>
+            <div class="form-group">
+                <a id="comment_login" href="/login">Tu dois te connecter pour pouvoir ajouter un commentaire</a>
+                <button class="comment_btn" type="submit">Envoyer</button>
+            </div>
+        </form>
+
         <div class="comments">
-         <% for (commentaire of commentaires) { %>
-      <article class="list_comment">
-          <h3>Commentaire d'un voyageur</h3>
-            <p>
-                <b>
+            <% for (commentaire of commentaires) { %>
+                <article class="list_comment">
+                    <h3>Commentaire d'un voyageur</h3>
+                    <p>
+                        <b>
             <%= commentaire.pseudo %> : 
                 </b>
-            </p>
-          <p>
-            <%= commentaire.dateFormatee %>
-            </p>
-            <p>
-            <%= commentaire.message %>
-            </p>
-        </article>
-    <% } %>
+                    </p>
+                    <p>
+                        <%= commentaire.dateFormatee %>
+                    </p>
+                    <p>
+                        <%= commentaire.message %>
+                    </p>
+                </article>
+                <% } %>
         </div>
-        </section>
-    </main>
+    </section>
+</main>
 <%- include('footer') -%>
